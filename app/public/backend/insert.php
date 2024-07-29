@@ -1,7 +1,7 @@
 <?php
 
 // Importando o arquivo de conexão com o banco de dados
-require_once('../backend/conexao.php');
+require_once('./conexao.php');
 
 // Verificando se a requisição é do tipo POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
