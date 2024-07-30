@@ -77,7 +77,7 @@
                             <div class="row">
                                 <?php
                                 // Preparando a consulta
-                                $stmt = $pdo->prepare("SELECT * FROM tipoEvento");
+                                $stmt = $pdo->prepare("SELECT * FROM tipoevento");
 
                                 // Executando a consulta
                                 $stmt->execute();
@@ -104,7 +104,7 @@
                                 $stmt->execute();
 
                                 // Obtendo os resultados
-                                $resultadoConsultaCondicionantes = $stmt->fetchAll();; ?>
+                                $resultadoConsultaCondicionantes = $stmt->fetchAll(); ?>
                                 <span>Condicionante:</span>
                                 <br>
                                 <select name="Condicionante" id="Condicionante" class="inputEvento">

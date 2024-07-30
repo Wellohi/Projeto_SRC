@@ -32,14 +32,21 @@ if (isset($_POST["nome"]) && isset($_POST["senha"]) && $pdo != null) {
         $_SESSION["users"] = array($user["nome"], $user["adm"]);
 
         // Redirecionando o usuário para a página home.php
-        echo "<script>window.location = '../pages/home.php'</script>";
+        //echo "<script>window.location = '../pages/home.php'</script>";
+        
+        header('Location: ../pages/home.php');
+        exit(); 
 
     } else {
         // Se o usuário não for encontrado na tabela, redireciona o usuário de volta para a página de login
-        echo "<script>window.location = '../index.php'</script>";
+        //echo "<script>window.location = '../index.php'</script>";
+        header('Location: ../index.php');
+        exit(); 
     }
 
 } else {
     // Se as variáveis POST "nome" e "senha" não existirem ou se o objeto PDO não existir, redireciona o usuário de volta para a página de login
-    echo "<script>window.location = '../index.php'</script>";
+    //echo "<script>window.location = '../index.php'</script>";
+    header('Location: ../index.php');
+    exit(); 
 }

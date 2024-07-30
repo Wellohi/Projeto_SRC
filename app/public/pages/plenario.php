@@ -93,7 +93,7 @@ function consultarTabela($pdo, $tabela)
 $resultadoConsultaCondicionantes = consultarTabela($pdo, "condicionantes");
 
 // Consultando a tabela "tipoEvento"
-$resultados = consultarTabela($pdo, "tipoEvento");; ?>
+$resultados = consultarTabela($pdo, "tipoevento"); ?>
 
 
 <dialog id="modal11" class="modal">

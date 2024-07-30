@@ -8,7 +8,7 @@
 
         const nomeDoEvento = document.getElementById("inputNomeDoEvento").value;
         const dataDoEvento = document.getElementById("inputDataDoEvento").value;
-        const tipoDoEvento = document.getElementById("tipoEvento").value;
+        const tipoDoEvento = document.getElementById("tipoevento").value;
         const condicionante =document.getElementById("eventoCondicionante").value;
         const pontuacaoDoEvento = document.getElementById("pontuacao").value;
         const tipoEventoSpan = document.createElement("span");
