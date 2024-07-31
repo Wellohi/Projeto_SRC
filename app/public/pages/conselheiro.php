@@ -7,10 +7,10 @@
 
 <!-- Botão para adicionar conselheiro -->
 <div class="btnadd btnadd-head">
-    <button id="openModal1" class="btn success" style="max-width: 14em !important">Adicionar conselheiro</button>
+    <button id="openModal1" class="btn success" style="max-width: 14em;">Adicionar conselheiro</button>
 </div>
 
-<button id="openModal5" class="restaurar" style="width: 14em">Conselheiros desativados</button>
+<button id="openModal5" class="restaurar" style="width: 14em;">Conselheiros desativados</button>
 
 
 <div class="box">
@@ -80,7 +80,7 @@
             <!-- <p>Deseja adicionar um novo conselheiro?</p> -->
             <input type="text" name="adicionarConselheiro" id="adicionarConselheiro" autocomplete="off" placeholder="NOME DO CONSELHEIRO">
             <br>
-            <button type="submit" class="btn btn-primary float-left"">Adicionar</button>
+            <button type="submit" class="btn btn-primary float-left">Adicionar</button>
             <button type="reset" id="closeModal1" class="btn btn-secondary float-right">Fechar</button>
         </form>
     </div>
@@ -89,7 +89,7 @@
 
 
 <div class="container-table">
-    <div style=" width: 100%;" class="tableOverflow">
+    <div style=" width: 65%;" class="tableOverflow">
         <table id="tabela-cadastro" style="width: 100%;">
             <thead>
                 <tr class="">
@@ -113,12 +113,12 @@
                 foreach ($resultados as $resultado) {
                     echo "<tr>";
                     echo "<td>" . $resultado['nome'] . "</td>";
-                    echo "<td><button class='btn-acessar' data-id='" . $resultado['id'] . "'>Acessar</button></td>";
-                    echo "<td class='campodesativar'>
-
+                    echo "<td class='acessarDesativar'><button class='btn-acessar' data-id='" . $resultado['id'] . "'><i class='fa-solid fa-check'></i></button></td>";
+                    echo "<td class='campodesativar acessarDesativar'>
+                    
                     <button id='openModal4' class='btn-desativarconselheiro danger btnremove' 
                             data-id='" . $resultado['id'] . "'
-                            data-nome='" . $resultado['nome'] . "'>Desativar</button>
+                            data-nome='" . $resultado['nome'] . "'><i class='fa-solid fa-xmark'></i></button>
                     <input type='hidden' class='id-conselheiro' value='" . $resultado['id'] . "'>
                     </td>";
                     echo "</tr>";

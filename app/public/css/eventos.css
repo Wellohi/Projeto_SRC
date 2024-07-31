@@ -55,8 +55,11 @@
 }
 
 .container-table td{
-    max-width: 15vh;
-    word-wrap: break-word;
+    max-width: 165px;
+    height: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .dropdown {
@@ -88,6 +91,11 @@
 
 .dropdown-content label:hover {
     filter: brightness(1.3);
+}
+
+.btn.info, .btn.danger{
+    padding: 0.5rem 0.7rem;
+    margin: 0 auto;
 }
 
 .dropdown-btn {
@@ -168,7 +176,7 @@
 
 .modal-content td{
     max-width: 22em;
-    word-break: keep-all;
+    /* word-break: keep-all; */
 }
 
 
@@ -182,7 +190,11 @@
 
 .removerBtn{
     display: flex; 
-    word-break:keep-all; 
+    /* word-break:keep-all;  */
     justify-content: center; 
     min-width: 50px
+}
+
+.tableEvento th{
+    height: 20px;
 }

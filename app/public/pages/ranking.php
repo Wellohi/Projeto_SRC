@@ -14,13 +14,13 @@
 <br>
 
 <div class="container-table">
-    <div style="width: 100%;" class="tableOverflow">
+    <div style="width: 45%;" class="tableOverflow">
         <table id="conselheirosTable" style="width: 100%;">
           <tr class="head-tab">
             <th onclick="sortTableByName()" class="classificando"> Nome do Conselheiro <i class="fa-solid fa-arrow-up-z-a"></i> </th>
-            <th onclick="sortTableByScore()" class="classificando"> Pontuação <i class="fa-solid fa-arrow-up-wide-short"></i> </th> 
+            <th onclick="sortTableByScore()" class="classificando" style="width:10rem;"> Pontuação <i class="fa-solid fa-arrow-up-wide-short"></i> </th> 
           </tr>
-          <?php
+          <?php 
           // Preparando a consulta
           $stmt = $pdo->prepare("SELECT * FROM conselheiro");
 
@@ -39,7 +39,7 @@
         </table>
     </div>
 </div>
-<br>''
+<br>
 
 <dialog id="modal-acessarRankingConselheiro" class="modal">
   <div class="modal-content">
