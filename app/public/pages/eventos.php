@@ -41,7 +41,7 @@
                         echo '<td>' . $row['Data_Evento'] . '</td>';
                         echo '<td style="width: 30px">' . $row['Pontuacao'] . '</td>';
                         echo '<td style="width: 5rem;">';
-                        echo '<button class="btn info" onclick="openModalEvento('
+                        echo '<button class="btn info icon" onclick="openModalEvento('
                             . $row['ID'] . ', \''
                             . $row['Nome'] . '\', \''
                             . $row['Tipo'] . '\', \''
@@ -50,7 +50,7 @@
                             . $row['Pontuacao'] . ')"><i class="fa-regular fa-eye"></i></button>';
                         echo '</td>';
                         echo '<td style="width: 5rem;">';
-                        echo '<button class="btn danger" onclick="excluirCard(' . $row['ID'] . ')"><i class="fa-regular fa-trash-can"></i></button>';
+                        echo '<button class="btn danger icon" onclick="excluirCard(' . $row['ID'] . ')"><i class="fa-regular fa-trash-can"></i></button>';
                         echo '</td>';
                         echo '</tr>';
                     }
