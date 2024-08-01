@@ -34,7 +34,7 @@
                 if (count($resultados) > 0) {
                     foreach ($resultados as $row) {
                         echo '<tr>';
-                        echo '<td class="hideColumn">' . $row['ID'] . '</td>';
+                        echo '<td class="hideColumn">' . $row['id_evento'] . '</td>';
                         echo '<td>' . $row['nm_evento'] . '</td>';
                         echo '<td>' . $row['tp_evento'] . '</td>';
                         echo '<td>' . $row['nm_condicionante'] . '</td>';
@@ -80,7 +80,7 @@
                     <div class="row">
                         <?php
                         // Preparando a consulta
-                        $stmt = $pdo->prepare("SELECT * FROM tp_evento");
+                        $stmt = $pdo->prepare("SELECT * FROM tipo_evento");
 
                         // Executando a consulta
                         $stmt->execute();

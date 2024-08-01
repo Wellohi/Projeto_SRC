@@ -46,14 +46,14 @@
             <tbody id="plenariosTableBody">
                 <!-- Os dados serão inseridos aqui -->
                 <?php
-                $stmt = $pdo->prepare("SELECT * FROM plenario ORDER BY Nome");
+                $stmt = $pdo->prepare("SELECT * FROM plenario ORDER BY nm_plenario");
                 $stmt->execute();
                 $resultados = $stmt->fetchAll();
 
                 if (count($resultados) > 0) {
                     foreach ($resultados as $row) {
                         echo '<tr>';
-                        echo '<td class="hideColumn">' . $row['ID'] . '</td>';
+                        echo '<td class="hideColumn">' . $row['id_plenario'] . '</td>';
                         echo '<td>' . $row['nm_plenario'] . '</td>';
                         echo '<td>' . $row['dt_plenario'] . '</td>';
                         echo '<td>' . $row['qt_vagas'] . '</td>';
@@ -64,7 +64,7 @@
                         echo '<button class="btn info icon"  onclick="openModalEvento()"><i class="fa-regular fa-eye"></button>';
                         echo '</td>';
                         echo '<td style=" width: 5rem;">';
-                        echo '<button class="btn danger icon" onclick="excluirCardPlenario(' . $row['ID'] . ')"><i class="fa-regular fa-trash-can"></i></button>';
+                        echo '<button class="btn danger icon" onclick="excluirCardPlenario(' . $row['id_plenario'] . ')"><i class="fa-regular fa-trash-can"></i></button>';
                         echo '</td>';
                         echo '</tr>';
                         echo '</tr>';
@@ -93,10 +93,10 @@ function consultarTabela($pdo, $tabela)
 }
 
 // Consultando a tabela "condicionantes"
-$resultadoConsultaCondicionantes = consultarTabela($pdo, "condicionantes");
+$resultadoConsultaCondicionantes = consultarTabela($pdo, "condicionante");
 
 // Consultando a tabela "tipoEvento"
-$resultados = consultarTabela($pdo, "tipoevento"); ?>
+$resultados = consultarTabela($pdo, "tipo_evento"); ?>
 
 
 <dialog id="modal11" class="modal">
@@ -112,14 +112,14 @@ $resultados = consultarTabela($pdo, "tipoevento"); ?>
             <select name="tipoEventoPlenario" id="tipoEventoPlenario" style="width: 100%;" class="inputPlenario" name="inputPlenario">
                 <option value="" data-default disabled selected>Selecione</option>
                 <?php foreach ($resultados as $resultado) { ?>
-                    <option value="<?php echo $resultado['nomeTipoEvento']; ?>"><?php echo $resultado['nomeTipoEvento']; ?></option>
+                    <option value="<?php echo $resultado['nm_tipo_evento']; ?>"><?php echo $resultado['nm_tipo_evento']; ?></option>
                 <?php } ?>
             </select>
             <span>Condicionate</span>
             <select name="condicionanteDoEventoPlenario" id="condicionanteDoEventoPlenario" class="inputPlenario" name="condicionanteDoEventoPlenario">
                 <option value="" data-default disabled selected>Selecione</option>
                 <?php foreach ($resultadoConsultaCondicionantes as $resultadoConsultaCondicionante) { ?>
-                    <option value="<?php echo $resultadoConsultaCondicionante['nomeCondicionante']; ?>"><?php echo $resultadoConsultaCondicionante['nomeCondicionante']; ?></option>
+                    <option value="<?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?>"><?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?></option>
                 <?php } ?>
             </select>
             <span>Local:</span>
