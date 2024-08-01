@@ -54,12 +54,12 @@
                     foreach ($resultados as $row) {
                         echo '<tr>';
                         echo '<td class="hideColumn">' . $row['ID'] . '</td>';
-                        echo '<td>' . $row['Nome'] . '</td>';
-                        echo '<td>' . $row['Data'] . '</td>';
-                        echo '<td>' . $row['Vagas'] . '</td>';
-                        echo '<td>' . $row['Tipo'] . '</td>';
-                        echo '<td>' . $row['Condicionante'] . '</td>';
-                        echo '<td>' . $row['Local'] . '</td>';
+                        echo '<td>' . $row['nm_plenario'] . '</td>';
+                        echo '<td>' . $row['dt_plenario'] . '</td>';
+                        echo '<td>' . $row['qt_vagas'] . '</td>';
+                        echo '<td>' . $row['tp_plenario'] . '</td>';
+                        echo '<td>' . $row['nm_condicionante'] . '</td>';
+                        echo '<td>' . $row['sg_estado_uf'] . '</td>';
                         echo '<td style=" width: 5rem;">';
                         echo '<button class="btn info icon"  onclick="openModalEvento()"><i class="fa-regular fa-eye"></button>';
                         echo '</td>';
