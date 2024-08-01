@@ -61,10 +61,10 @@
                         echo '<td>' . $row['Condicionante'] . '</td>';
                         echo '<td>' . $row['Local'] . '</td>';
                         echo '<td style=" width: 5rem;">';
-                        echo '<button class="btn info"  onclick="openModalEvento()"><i class="fa-regular fa-eye"></button>';
+                        echo '<button class="btn info icon"  onclick="openModalEvento()"><i class="fa-regular fa-eye"></button>';
                         echo '</td>';
                         echo '<td style=" width: 5rem;">';
-                        echo '<button class="btn danger" onclick="excluirCardPlenario(' . $row['ID'] . ')"><i class="fa-regular fa-trash-can"></i></button>';
+                        echo '<button class="btn danger icon" onclick="excluirCardPlenario(' . $row['ID'] . ')"><i class="fa-regular fa-trash-can"></i></button>';
                         echo '</td>';
                         echo '</tr>';
                         echo '</tr>';
