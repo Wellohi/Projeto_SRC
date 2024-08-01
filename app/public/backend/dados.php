@@ -13,9 +13,9 @@
 // if(isset($_POST['submit'])) {
 // }
 
-$nome_conselheiro = $_POST['nome_conselheiro'];
-$nome_evento = $_POST['nome_evento'];
-$tipo_evento = $_POST['tipo_evento'];
-$condicionante = $_POST['condicionante'];
-$data = $_POST['data'];
-$pontuacao = $_POST['pontuacao'];
+$nm_conselheiro = $_POST['nm_conselheiro'];
+$nm_evento = $_POST['nm_evento'];
+$tp_evento = $_POST['tp_evento'];
+$nm_condicionante = $_POST['nm_condicionante'];
+$dt_evento = $_POST['dt_evento'];
+$vl_pontuacao_conselheiro = $_POST['vl_pontuacao_conselheiro'];

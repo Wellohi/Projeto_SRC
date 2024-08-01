@@ -7,11 +7,11 @@ require_once('./conexao.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Obtém o ID do conselheiro a ser removido a partir do formulário
-    $id = $_POST['id'];
+    $id_conselheiro = $_POST['id_conselheiro'];
 
     // Prepara a consulta para desativar o conselheiro do banco de dados
-    $stmt = $pdo->prepare("UPDATE conselheiro SET excluido = 1 WHERE id = ?");
-    $stmt->execute([$id]);
+    $stmt = $pdo->prepare("UPDATE conselheiro SET excluir = 1 WHERE id_conselheiro = ?");
+    $stmt->execute([$id_conselheiro]);
 
     // Verifica se a consulta foi executada com sucesso
     if ($stmt->rowCount() > 0) {

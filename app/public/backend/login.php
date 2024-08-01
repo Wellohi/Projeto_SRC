@@ -4,16 +4,16 @@
 require_once('./conexao.php');
 
 // Verificando se as variáveis POST "nome" e "senha" existem e se o objeto PDO também existe
-if (isset($_POST["nome"]) && isset($_POST["senha"]) && $pdo != null) {
+if (isset($_POST["nm_usuario"]) && isset($_POST["bn_senha_usuario"]) && $pdo != null) {
 
 
     // Preparando uma consulta preparada para buscar um registro na tabela "usuarios" com o nome e a senha fornecidos
     //$pdo = new PDO($database_name, $username, $password, $options);
 
-    $query = $pdo->prepare("SELECT * FROM usuarios WHERE nome = ? AND senha = ? ");
-    $post_nome = $_POST["nome"];
-    $post_senha = $_POST["senha"];
-    $query->execute(array($post_nome, $post_senha));
+    $query = $pdo->prepare("SELECT * FROM usuario WHERE nm_usuario = ? AND bn_senha_usuario = ? ");
+    $post_nm_nome = $_POST["nm_usuario"];
+    $post_bn_senha_usuario = $_POST["bn_senha_usuario"];
+    $query->execute(array($post_nm_nome, $post_bn_senha_usuario));
  
 
     //TO DO: implementar integração com sistema SSO
@@ -29,7 +29,7 @@ if (isset($_POST["nome"]) && isset($_POST["senha"]) && $pdo != null) {
         
         // Iniciando uma sessão e armazenando o nome do usuário e se ele é um administrador em um array na variável $_SESSION
         session_start();
-        $_SESSION["users"] = array($user["nome"], $user["adm"]);
+        $_SESSION["users"] = array($user["nm_usuario"], $user["adm_usuario"]);
 
         // Redirecionando o usuário para a página home.php
         //echo "<script>window.location = '../pages/home.php'</script>";

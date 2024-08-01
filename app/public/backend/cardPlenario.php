@@ -3,17 +3,17 @@ include_once('./conexao.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $_POST['inputNomePlenario'];
-    $data_plenario = $_POST['inputDataPlenario'];
-    $vagas_plenario = $_POST['inputVagasPlenario'];
-    $tipo = $_POST['tipoEventoPlenario'];
-    $nomeCondicionante = $_POST['condicionanteDoEventoPlenario'];
-    $local = $_POST['inputLocalPlenario'];
+    $nm_plenario = $_POST['nm_plenario'];
+    $dt_plenario = $_POST['dt_plenario'];
+    $qt_vagas = $_POST['qt_vagas'];
+    $tp_plenario = $_POST['tp_plenario'];
+    $nm_condicionante = $_POST['nm_condicionante'];
+    $sg_estado_uf = $_POST['sg_estado_uf'];
 
-    $insercao = "INSERT INTO plenario (Nome, Data, Vagas, Tipo, Condicionante, Local) VALUES (?, ?, ?, ?, ?, ?)";
+    $insercao = "INSERT INTO plenario (nm_plenario, dt_plenario, qt_vagas, tp_plenario, nm_condicionante, sg_estado_uf) VALUES (?, ?, ?, ?, ?, ?)";
     $insercao = $pdo->prepare($insercao);
     try {
-        $insercao->execute([$nome, $data_plenario, $vagas_plenario, $tipo, $nomeCondicionante, $local]);
+        $insercao->execute([$nm_plenario, $dt_plenario, $qt_vagas, $tp_plenario, $nm_condicionante, $sg_estado_uf]);
         echo '<meta http-equiv="Refresh" content="0;' . $page . '">';
     } catch (PDOException $e) {
         echo 'Erro ao inserir no banco: ' . $e->getMessage();

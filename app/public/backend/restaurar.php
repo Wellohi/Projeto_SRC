@@ -4,9 +4,9 @@ include './conexao.php';
 
 // Verifica se o ID do conselheiro foi enviado via POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $idConselheiro = $_POST['id-ativar'];
-    $stmt = $pdo->prepare("UPDATE conselheiro SET excluido = 0 WHERE id = ?");
-    if ($stmt->execute([$idConselheiro])) {
+    $id_conselheiro = $_POST['id_conselheiro'];
+    $stmt = $pdo->prepare("UPDATE conselheiro SET excluir = 0 WHERE id_conselheiro = ?");
+    if ($stmt->execute([$id_conselheiro])) {
         // conselheiro ativado com sucesso
         header("Location: " . $_SERVER["HTTP_REFERER"]);
     } else {
