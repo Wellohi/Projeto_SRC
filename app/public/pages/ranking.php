@@ -32,7 +32,7 @@
 
           foreach ($resultados as $conselheiro) {
             echo "<tr>";
-            echo "<td><a href=\"#\" onclick=\"openModal('" . $conselheiro['Nome'] . "', " . $conselheiro['Pontuacao_Total'] . ")\">" . $conselheiro['Nome'] . "</a></td>";
+            echo "<td><a href=\"#\" onclick=\"openModal('" . $conselheiro['nm_conselheiro'] . "', " . $conselheiro['Pontuacao_Total'] . ")\">" . $conselheiro['nm_conselheiro'] . "</a></td>";
             echo "<td>" . $conselheiro['Pontuacao_Total'] . "</td>";
             echo "</tr>";
           } ?>
@@ -85,13 +85,13 @@
     });
   });
 
-  function openModal(nome, pontuacao) {
+  function openModal(nm_conselheiro, vl_pontuacao_conselheiro) {
   const modal = document.getElementById('modal-acessarRankingConselheiro');
   const nomeElement = modal.querySelector('#conselheiroNome');
   const pontuacaoElement = modal.querySelector('#conselheiroPontuacao');
 
-  nomeElement.textContent = nome;
-  pontuacaoElement.textContent = pontuacao;
+  nomeElement.textContent = nm_conselheiro;
+  pontuacaoElement.textContent = vl_pontuacao_conselheiro;
 
   modal.showModal();
 }
