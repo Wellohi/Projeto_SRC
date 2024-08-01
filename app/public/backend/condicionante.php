@@ -5,19 +5,19 @@ include_once('./conexao.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Armazenando o nome da condicionante em uma variável
-    $nomeCondicionante = $_POST['adicionarCondicionante'];
+    $nm_condicionante = $_POST['nm_condicionante'];
 
     // Armazenando pontuação em uma variável
-    $pontuacao = $_POST['pontuacao'];
+    $pontuacvl_pontuacao_conselheiroo = $_POST['vl_pontuacao_conselheiro'];
 
     // Consulta preparada para inserir um novo registro na tabela "conselheiro" com o nome fornecido
-    $sql_insert_condicionante = 'INSERT INTO condicionantes (nomeCondicionante, pontuacao) VALUES (?, ?)';
+    $sql_insert_condicionante = 'INSERT INTO condicionante (nm_condicionante, vl_pontuacao_conselheiro) VALUES (?, ?)';
 
     // Preparando a consulta com o objeto PDO e armazenando em uma variável
     $stmt_insert_condicionante = $pdo->prepare($sql_insert_condicionante);
 
     // Executando a consulta preparada com o nome fornecido
-    $stmt_insert_condicionante->execute([$nomeCondicionante, $pontuacao]);
+    $stmt_insert_condicionante->execute([$nm_condicionante, $vl_pontuacao_conselheiro]);
 
     // Redirecionando o usuário de volta para a página anterior após a conclusão da operação
     header("Location: " . $_SERVER["HTTP_REFERER"]);
