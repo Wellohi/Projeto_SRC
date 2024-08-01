@@ -60,10 +60,10 @@
 
 
                 <label for="">Condicionante</label>
-                <select id="condicionates" name="condicionates">
+                <select id="condicionates" name="nm_condicionante">
                     <option value="" data-default disabled selected id=></option>
                     <?php foreach ($registros_evento as $registro_evento) { ?>
-                        <option value="<?= $registro_evento['condicionante'] ?>"><?= $registro_evento['condicionante'] ?>
+                        <option value="<?= $registro_evento['nm_condicionante'] ?>"><?= $registro_evento['nm_condicionante'] ?>
                         </option>
                     <?php } ?>
                 </select>

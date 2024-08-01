@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 <?php
-                $stmt = $pdo->prepare("SELECT * FROM evento ORDER BY Nome");
+                $stmt = $pdo->prepare("SELECT * FROM evento ORDER BY nm_evento");
                 $stmt->execute();
                 $resultados = $stmt->fetchAll();
 
@@ -35,22 +35,22 @@
                     foreach ($resultados as $row) {
                         echo '<tr>';
                         echo '<td class="hideColumn">' . $row['ID'] . '</td>';
-                        echo '<td>' . $row['Nome'] . '</td>';
-                        echo '<td>' . $row['Tipo'] . '</td>';
-                        echo '<td>' . $row['Condicionante'] . '</td>';
-                        echo '<td>' . $row['Data_Evento'] . '</td>';
-                        echo '<td style="width: 30px">' . $row['Pontuacao'] . '</td>';
+                        echo '<td>' . $row['nm_evento'] . '</td>';
+                        echo '<td>' . $row['tp_evento'] . '</td>';
+                        echo '<td>' . $row['nm_condicionante'] . '</td>';
+                        echo '<td>' . $row['dt_evento'] . '</td>';
+                        echo '<td style="width: 30px">' . $row['vl_pontuacao_conselheiro'] . '</td>';
                         echo '<td style="width: 5rem;">';
                         echo '<button class="btn info icon" onclick="openModalEvento('
-                            . $row['ID'] . ', \''
-                            . $row['Nome'] . '\', \''
-                            . $row['Tipo'] . '\', \''
-                            . $row['Condicionante'] . '\', \''
-                            . $row['Data_Evento'] . '\', '
-                            . $row['Pontuacao'] . ')"><i class="fa-regular fa-eye"></i></button>';
+                            . $row['id_evento'] . ', \''
+                            . $row['nm_evento'] . '\', \''
+                            . $row['tp_evento'] . '\', \''
+                            . $row['nm_condicionante'] . '\', \''
+                            . $row['dt_evento'] . '\', '
+                            . $row['vl_pontuacao_conselheiro'] . ')"><i class="fa-regular fa-eye"></i></button>';
                         echo '</td>';
                         echo '<td style="width: 5rem;">';
-                        echo '<button class="btn danger icon" onclick="excluirCard(' . $row['ID'] . ')"><i class="fa-regular fa-trash-can"></i></button>';
+                        echo '<button class="btn danger icon" onclick="excluirCard(' . $row['id_evento'] . ')"><i class="fa-regular fa-trash-can"></i></button>';
                         echo '</td>';
                         echo '</tr>';
                     }
@@ -80,7 +80,7 @@
                     <div class="row">
                         <?php
                         // Preparando a consulta
-                        $stmt = $pdo->prepare("SELECT * FROM tipoevento");
+                        $stmt = $pdo->prepare("SELECT * FROM tp_evento");
 
                         // Executando a consulta
                         $stmt->execute();
@@ -93,7 +93,7 @@
                         <select name="Tipo" id="Tipo" style="width: 100%;" class="inputEvento">
                             <option value="" data-default disabled selected>Selecione</option>
                             <?php foreach ($resultados as $resultado) { ?>
-                                <option value="<?php echo $resultado['nomeTipoEvento']; ?>"><?php echo $resultado['nomeTipoEvento']; ?></option>
+                                <option value="<?php echo $resultado['nm_tipo_evento']; ?>"><?php echo $resultado['nm_tipo_evento']; ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -101,7 +101,7 @@
                         <?php
 
                         // Preparando a consulta
-                        $stmt = $pdo->prepare("SELECT * FROM condicionantes");
+                        $stmt = $pdo->prepare("SELECT * FROM condicionante");
 
                         // Executando a consulta
                         $stmt->execute();
@@ -113,7 +113,7 @@
                         <select name="Condicionante" id="Condicionante" class="inputEvento">
                             <option value="" data-default disabled selected>Selecione</option>
                             <?php foreach ($resultadoConsultaCondicionantes as $resultadoConsultaCondicionante) { ?>
-                                <option value="<?php echo $resultadoConsultaCondicionante['nomeCondicionante']; ?>"><?php echo $resultadoConsultaCondicionante['nomeCondicionante']; ?></option>
+                                <option value="<?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?>"><?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -153,7 +153,7 @@
             </tr> -->
             <?php
             // Preparando a consulta
-            $stmt = $pdo->prepare("SELECT id, nome FROM conselheiro WHERE excluido = 1 ORDER BY nome");
+            $stmt = $pdo->prepare("SELECT id_conselheiro, nm_conselheiro FROM conselheiro WHERE excluir = 1 ORDER BY nm_conselheiro");
 
             // Executando a consulta
             $stmt->execute();
@@ -164,11 +164,11 @@
             // Iterando sobre os resultados para exibir na tabela
             foreach ($resultados as $resultado) {
                 echo "<tr>";
-                echo "<td>" . $resultado['nome'] . "</td>";
+                echo "<td>" . $resultado['nm_conselheiro'] . "</td>";
                 echo "<td class='conselheirosAdicionados'>";
                 echo "<button id='openModal10' class='btn btn-primary btnadd btn-ativar' style='align-items: center; min-width: 90px; margin: 0px 0px 0px 16% !important;' 
-                    data-id='" . $resultado['id'] . "'
-                    data-nome='" . $resultado['nome'] . "' 
+                    data-id='" . $resultado['id_conselheiro'] . "'
+                    data-nome='" . $resultado['nm_conselheiro'] . "' 
                     class='removerBtn'>Remover</button>";
                 echo "</td>";
                 echo "</tr>";
@@ -180,7 +180,7 @@
             <?php
 
             // Preparando a consulta
-            $stmt = $pdo->prepare("SELECT * FROM tabelaconselheiros");
+            $stmt = $pdo->prepare("SELECT * FROM tabela_conselheiro");
 
             // Executando a consulta
             $stmt->execute();
@@ -197,7 +197,7 @@
                         <th>Remover Participantes</th>
                     </tr>
                     <tr>
-                        <td><?= $resultadoTabelaConselheiro['conselheiro'] ?></td>
+                        <td><?= $resultadoTabelaConselheiro['nm_conselheiro'] ?></td>
                         <td><button class="btn danger">Remover</button></td>
                     </tr>
                 <?php } ?>
