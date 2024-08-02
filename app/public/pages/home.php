@@ -104,8 +104,8 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
         <?php include_once('./plenario.php'); ?>
       </div>
 
-      <div id="Ranking" class="tabcontent">
-        <?php include_once('./ranking.php'); ?>
+      <div id="ranqueamento" class="tabcontent">
+        <?php include_once('./ranqueamento.php'); ?>
       </div>
 
       <!-- Page de Pontuação Acumulada -->

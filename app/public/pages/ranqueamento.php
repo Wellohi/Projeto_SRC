@@ -7,7 +7,7 @@
     <input type="text" id="campoDeBuscaPlenario" onkeyup="buscarNoCampoPlenario()" placeholder="Digite o Nome Do Conselheiro...">
 </div> -->
 
-<div class="group-buttons">
+<div class="group-buttons" style="padding-right: 360px !important">
   <button class="btn btn-ranking" onclick="generateReport()">Gerar Relatório</button>
 </div>
 
@@ -75,7 +75,7 @@
   conselheiroLinks.forEach(link => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
-      const conselheiroId = event.target.dataset.id;
+      const conselheiroId = event.target.dataset.id_conselheiro;
       // Fazer uma requisição AJAX para obter os dados do conselheiro com o ID correspondente
       // e preencher as informações do modal com os dados obtidos
       // ...
