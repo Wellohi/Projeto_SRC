@@ -1,6 +1,6 @@
 FROM php:8.1-fpm-alpine
 
-RUN apk add --update linux-headers
+RUN apk add --no-cache linux-headers
 
 RUN apk add --no-cache autoconf g++ make \
     && pecl install xdebug \
