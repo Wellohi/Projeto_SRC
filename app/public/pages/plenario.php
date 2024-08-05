@@ -103,27 +103,27 @@ $resultados = consultarTabela($pdo, "tipo_evento"); ?>
     <form id="formularioAdicionarEvento" method="post" action="../backend/cardPlenario.php">
         <div class="modal-content">
             <span>Nome Do Plenário:</span>
-            <input type="text" class="inputPlenario" id="inputNomePlenario" name="inputNomePlenario">
+            <input type="text" class="inputPlenario" id="inputNomePlenario" name="nm_plenario">
             <span>Data:</span>
-            <input type="date" class="inputPlenario data" id="inputDataPlenario" name="inputDataPlenario">
+            <input type="date" class="inputPlenario data" id="inputDataPlenario" name="dt_plenario">
             <span>Vagas :</span>
-            <input type="number" class="inputPlenario vagas" id="inputVagasPlenario" name="inputVagasPlenario">
+            <input type="number" class="inputPlenario vagas" id="inputVagasPlenario" name="qt_vagas">
             <span>Tipo De Evento :</span>
-            <select name="tipoEventoPlenario" id="tipoEventoPlenario" style="width: 100%;" class="inputPlenario" name="inputPlenario">
+            <select name="tp_plenario" id="tipoEventoPlenario" style="width: 100%;" class="inputPlenario">
                 <option value="" data-default disabled selected>Selecione</option>
                 <?php foreach ($resultados as $resultado) { ?>
                     <option value="<?php echo $resultado['nm_tipo_evento']; ?>"><?php echo $resultado['nm_tipo_evento']; ?></option>
                 <?php } ?>
             </select>
             <span>Condicionate</span>
-            <select name="condicionanteDoEventoPlenario" id="condicionanteDoEventoPlenario" class="inputPlenario" name="condicionanteDoEventoPlenario">
+            <select name="nm_condicionante" id="condicionanteDoEventoPlenario" class="inputPlenario" >
                 <option value="" data-default disabled selected>Selecione</option>
                 <?php foreach ($resultadoConsultaCondicionantes as $resultadoConsultaCondicionante) { ?>
                     <option value="<?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?>"><?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?></option>
                 <?php } ?>
             </select>
             <span>Local:</span>
-            <input type="text" class="inputPlenario" id="inputLocalPlenario" name="inputLocalPlenario">
+            <input type="text" class="inputPlenario" id="inputLocalPlenario" name="sg_estado_uf" maxlength="2" size="2">
             <button type="submit" id="openModal11" style="margin-top: 10px !important; margin-bottom: -40px !important; margin-left: 10px !important;" class="btn btn-primary ">Adicionar</button>
             <button type="reset" id="closeModal11" style="margin: 0px 0px 0px 82% !important;" class="btn btn-secondary modalbtn">Fechar</button>
         </div>

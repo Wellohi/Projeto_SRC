@@ -70,12 +70,12 @@
                     <div class="row">
                         <span>Nome do Evento:</span>
                         <br>
-                        <input id="inputNomeDoEvento" class="inputEvento" value="" name="inputNomeDoEvento" type="text" placeholder="Nome do Evento">
+                        <input id="inputNomeDoEvento" class="inputEvento" value="" name="nm_evento" type="text" placeholder="Nome do Evento">
                     </div>
                     <div class="row">
                         <span>Data do Evento:</span>
                         <br>
-                        <input id="inputDataDoEvento" class="inputEvento" value="" name="inputDataDoEvento" type="date">
+                        <input id="inputDataDoEvento" class="inputEvento" value="" name="dt_evento" type="date">
                     </div>
                     <div class="row">
                         <?php
@@ -90,7 +90,7 @@
                         ?>
                         <span>Tipo Do Evento:</span>
                         <br>
-                        <select name="Tipo" id="Tipo" style="width: 100%;" class="inputEvento">
+                        <select name="tp_evento" id="Tipo" style="width: 100%;" class="inputEvento">
                             <option value="" data-default disabled selected>Selecione</option>
                             <?php foreach ($resultados as $resultado) { ?>
                                 <option value="<?php echo $resultado['nm_tipo_evento']; ?>"><?php echo $resultado['nm_tipo_evento']; ?></option>
@@ -110,7 +110,7 @@
                         $resultadoConsultaCondicionantes = $stmt->fetchAll(); ?>
                         <span>Condicionante:</span>
                         <br>
-                        <select name="Condicionante" id="Condicionante" class="inputEvento">
+                        <select name="nm_condicionante" id="Condicionante" class="inputEvento">
                             <option value="" data-default disabled selected>Selecione</option>
                             <?php foreach ($resultadoConsultaCondicionantes as $resultadoConsultaCondicionante) { ?>
                                 <option value="<?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?>"><?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?></option>

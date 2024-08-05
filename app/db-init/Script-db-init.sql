@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `condicionante` (
   `id_condicionante` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a condição que o evento terá.',
   `nm_condicionante` varchar(255) NOT NULL COMMENT 'Nome que a condição evento terá.',
-  `vl_pontuacao_conselheiro` int(11) NOT NULL COMMENT 'Valor da pontuação que o conselheiro adriu.'
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -125,7 +125,7 @@ CREATE TABLE `evento` (
   `tp_evento` varchar(255) NOT NULL COMMENT 'Definindo um tipo para o evento.',
   `nm_condicionante` varchar(255) NOT NULL COMMENT 'Nome que a condição evento terá.',
   `dt_evento` date NOT NULL COMMENT 'A data que determinara o evento. ',
-  `vl_pontuacao_conselheiro` int(11) NOT NULL COMMENT 'Valor da pontuação que o conselheiro adriu.'
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -160,7 +160,7 @@ CREATE TABLE `gestor` (
 CREATE TABLE `participacao` (
   `id_conselheiro` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o conselheiro que foi cadastrado.',
   `id_evento` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o evento.',
-  `vl_pontuacao_conselheiro` int(11) NOT NULL COMMENT 'Valor da pontuação que o conselheiro adriu.'
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -199,7 +199,7 @@ INSERT INTO `plenario` (`id_plenario`, `nm_plenario`, `dt_plenario`, `qt_vagas`,
 CREATE TABLE `pontuacao` (
   `id_pontuacao` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a pontuação que o evento terá.',
   `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
-  `vl_pontuacao_conselheiro` int(11) NOT NULL COMMENT 'Valor da pontuação que o conselheiro adriu.'
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -218,7 +218,7 @@ INSERT INTO `pontuacao` (`id_pontuacao`, `nm_conselheiro`, `vl_pontuacao_conselh
 
 CREATE TABLE `ranqueamento` (
   `id_ranqueamento` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a posição onde o conselheiro se encontra.',
-  `vl_pontuacao_conselheiro` int(11) NOT NULL COMMENT 'Valor da pontuação que o conselheiro adriu.',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.',
   `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
   `dt_ranqueamento` varchar(255) NOT NULL COMMENT 'A data que determinara quando o reanqueamento foi criado. ',
   `nm_evento` varchar(255) NOT NULL COMMENT 'Nome que o evento terá.'
@@ -233,7 +233,7 @@ CREATE TABLE `ranqueamento` (
 CREATE TABLE `ranqueamento_evento` (
   `id_ranqueamento_evento` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a posição onde o conselheiro evento se encontra.',
   `nm_evento` varchar(255) NOT NULL COMMENT 'Nome que o evento terá.',
-  `vl_pontuacao_conselheiro` int(11) NOT NULL COMMENT 'Valor da pontuação que o conselheiro adriu.'
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -244,7 +244,7 @@ CREATE TABLE `ranqueamento_evento` (
 
 CREATE TABLE `tabela_conselheiro` (
   `id_tabela_conselheiro` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a tabela do conselheiro se encontra.',
-  `vl_pontuacao_conselheiro` int(11) NOT NULL COMMENT 'Valor da pontuação que o conselheiro adriu.',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.',
   `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
   `dt_tabela_conselheiro` varchar(255) NOT NULL COMMENT 'A data que determinara a criação da tabela conselheiro. ',
   `nm_evento` varchar(255) NOT NULL COMMENT 'Nome que o evento terá.'
@@ -259,7 +259,7 @@ CREATE TABLE `tabela_conselheiro` (
 CREATE TABLE `tipo_evento` (
   `id_tipo_evento` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o tipo do evento.',
   `nm_tipo_evento` varchar(255) NOT NULL COMMENT 'Definindo um tipo para o evento.',
-  `vl_pontuacao_conselheiro` int(11) NOT NULL COMMENT 'Valor da pontuação que o conselheiro adriu.'
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
