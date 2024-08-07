@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_POST['adicionarConselheiro'])) {
 
         // Armazenando o nome do conselheiro em uma variável
-        $nm_conselheiro = $_POST['nm_conselheiro'];
+        $nm_conselheiro = $_POST['adicionarConselheiro'];
 
         // Consulta preparada para inserir um novo registro na tabela "conselheiro" com o nome fornecido
         $sql_insert_conselheiro = 'INSERT INTO conselheiro (nm_conselheiro) VALUES (:n)';
