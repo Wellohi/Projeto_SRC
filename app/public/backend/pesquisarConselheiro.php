@@ -3,7 +3,7 @@
 include_once('./conexao.php');
 
 // obter o nome pesquisado do corpo da solicitação POST
-$nomePesquisado = $_POST['nm_conselheiro'];
+$nomePesquisado = $_POST['nome'];
 
 // preparar a consulta SQL para obter os conselheiros correspondentes
 $stmt = $pdo->prepare("SELECT id_conselheiro, nm_conselheiro FROM conselheiro WHERE excluir = 0 AND nm_conselheiro LIKE :nm_conselheiro ORDER BY nm_conselheiro");
