@@ -10,7 +10,7 @@ $stmt_conselheiro = $pdo->query($sql_conselheiro);
 $registros_conselheiro = $stmt_conselheiro->fetchAll();
 
 // Consulta para recuperar registros da tabela "evento"
-$sql_evento = 'SELECT id_evento, nm_condicionante, tp_evento, vl_pontuacao_conselheiro, qtdlimite FROM evento';    
+$sql_evento = 'SELECT id_evento, nm_condicionante, tp_evento, vl_pontuacao_conselheiro FROM evento';    
 
 // Inicializando uma variável para armazenar o resultado final
 $valor = '';
