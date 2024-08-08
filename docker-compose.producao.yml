@@ -24,12 +24,6 @@ services:
     volumes:
       - ./app:/app
 
-  php-cli:
-    build:
-      context: docker/desenvolvimento
-      dockerfile: php-cli/Dockerfile
-    volumes:
-      - ./app:/app
 
   mysql:
     image: mysql:8
