@@ -7,20 +7,20 @@
     <input type="text" id="campoDeBuscaPlenario" onkeyup="buscarNoCampoPlenario()" placeholder="Digite o Nome Do Conselheiro...">
 </div> -->
 
-<div class="group-buttons">
+<div class="group-buttons" style="padding-right: 360px !important">
   <button class="btn btn-ranking" onclick="generateReport()">Gerar Relatório</button>
 </div>
 
 <br>
 
 <div class="container-table">
-    <div style="width: 100%;" class="tableOverflow">
+    <div style="width: 45%;" class="tableOverflow">
         <table id="conselheirosTable" style="width: 100%;">
           <tr class="head-tab">
             <th onclick="sortTableByName()" class="classificando"> Nome do Conselheiro <i class="fa-solid fa-arrow-up-z-a"></i> </th>
-            <th onclick="sortTableByScore()" class="classificando"> Pontuação <i class="fa-solid fa-arrow-up-wide-short"></i> </th> 
+            <th onclick="sortTableByScore()" class="classificando" style="width:10rem;"> Pontuação <i class="fa-solid fa-arrow-up-wide-short"></i> </th> 
           </tr>
-          <?php
+          <?php 
           // Preparando a consulta
           $stmt = $pdo->prepare("SELECT * FROM conselheiro");
 
@@ -32,14 +32,14 @@
 
           foreach ($resultados as $conselheiro) {
             echo "<tr>";
-            echo "<td><a href=\"#\" onclick=\"openModal('" . $conselheiro['Nome'] . "', " . $conselheiro['Pontuacao_Total'] . ")\">" . $conselheiro['Nome'] . "</a></td>";
-            echo "<td>" . $conselheiro['Pontuacao_Total'] . "</td>";
+            echo "<td><a href=\"#\" onclick=\"openModal('" . $conselheiro['nm_conselheiro'] . "', " . $conselheiro['vl_pontuacao_conselheiro'] . ")\">" . $conselheiro['nm_conselheiro'] . "</a></td>";
+            echo "<td>" . $conselheiro['vl_pontuacao_conselheiro'] . "</td>";
             echo "</tr>";
           } ?>
         </table>
     </div>
 </div>
-<br>''
+<br>
 
 <dialog id="modal-acessarRankingConselheiro" class="modal">
   <div class="modal-content">
@@ -75,7 +75,7 @@
   conselheiroLinks.forEach(link => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
-      const conselheiroId = event.target.dataset.id;
+      const conselheiroId = event.target.dataset.id_conselheiro;
       // Fazer uma requisição AJAX para obter os dados do conselheiro com o ID correspondente
       // e preencher as informações do modal com os dados obtidos
       // ...
@@ -85,13 +85,13 @@
     });
   });
 
-  function openModal(nome, pontuacao) {
+  function openModal(nm_conselheiro, vl_pontuacao_conselheiro) {
   const modal = document.getElementById('modal-acessarRankingConselheiro');
   const nomeElement = modal.querySelector('#conselheiroNome');
   const pontuacaoElement = modal.querySelector('#conselheiroPontuacao');
 
-  nomeElement.textContent = nome;
-  pontuacaoElement.textContent = pontuacao;
+  nomeElement.textContent = nm_conselheiro;
+  pontuacaoElement.textContent = vl_pontuacao_conselheiro;
 
   modal.showModal();
 }

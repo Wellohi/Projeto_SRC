@@ -53,12 +53,16 @@
     height: 2em;
     float: right;
     border-radius: 5px;
-    margin: 10px 25% 0 0;
+    margin: 10px 30% 0 0;
 }
 
 /* Estilo da coluna "desativar" */
-.campodesativar {
+/* .campodesativar {
     width: 10%;
+} */
+
+.acessarDesativar{
+    width: 165px;
 }
 
 /* Estilo da tabela */
@@ -68,6 +72,10 @@
 
 #tabela-ativos {
     font-size: large;
+}
+
+.tabelaNomes{
+    height: auto;
 }
 
 .btn-primary {
@@ -93,8 +101,8 @@
 .btn-acessar {
     color: white;
     background-color: #124D81;
-    width: 110px;
-    height: 40px;
+    padding: 0.4rem 0.7rem;
+    margin: 0 auto; 
     /* border-radius: 5px; */
     border: 1px solid #c7c7c7;
 }
@@ -105,15 +113,15 @@
 }
 
 .btn-desativarconselheiro {
-    width: 110px;
-    height: 40px;
+    padding: 0.4rem 0.7rem;
+    margin: 0 auto; 
+    cursor: pointer ;
     /* border-radius: 5px; */
     /* border-color: #000000; */
 }
-
-.btn-desativarconselheiro{
-    cursor: pointer ;
-}
+/* .btn-desativarconselheiro i{
+ color: #1764A8;
+} */
 
 .group-buttons{
     display: flex;
@@ -121,11 +129,11 @@
     margin: 10px 10px -16px 10px;
 }
 
-.btn-ranking{position: relative;margin-left: 87%;float: right;max-width: 14em !important;background-color: #124D81;}
+.btn-ranking{position: relative;margin-left: 84%;float: right;max-width: 14em !important;background-color: #124D81;}
 
 .head-tab, .head-tab th{
     font-weight:400;
-    height: 40px;
+    height: 25px;
 }
 
 .container-table {
@@ -139,7 +147,7 @@
   }
 
   .container-table table{
-    overflow-y: scroll;
+    overflow-y: overlay;
   }
 
 .container-table a{
@@ -153,6 +161,7 @@
 
 tr{
     font-weight: normal !important;
+    height: 2rem;
 }
 
 #adicionarConselheiro {

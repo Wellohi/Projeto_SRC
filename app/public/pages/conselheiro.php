@@ -7,10 +7,10 @@
 
 <!-- Botão para adicionar conselheiro -->
 <div class="btnadd btnadd-head">
-    <button id="openModal1" class="btn success" style="max-width: 14em !important">Adicionar conselheiro</button>
+    <button id="openModal1" class="btn success" style="max-width: 14em;">Adicionar conselheiro</button>
 </div>
 
-<button id="openModal5" class="restaurar" style="width: 14em">Conselheiros desativados</button>
+<button id="openModal5" class="restaurar" style="width: 14em;">Conselheiros desativados</button>
 
 
 <div class="box">
@@ -44,7 +44,7 @@
             <tbody>
                 <?php
                 // Preparando a consulta
-                $stmt = $pdo->prepare("SELECT id, nome FROM conselheiro WHERE excluido = 1 ORDER BY nome");
+                $stmt = $pdo->prepare("SELECT id_conselheiro, nm_conselheiro FROM conselheiro WHERE excluir = 1 ORDER BY nm_conselheiro");
 
                 // Executando a consulta
                 $stmt->execute();
@@ -55,11 +55,11 @@
                 // Iterando sobre os resultados para exibir na tabela
                 foreach ($resultados as $resultado) {
                     echo "<tr>";
-                    echo "<td>" . $resultado['nome'] . "</td>";
+                    echo "<td>" . $resultado['nm_conselheiro'] . "</td>";
                     echo "<td class='campoativar'>";
                     echo "<button id='openModal10' class='btn btn-primary btnadd btn-ativar' style='align-items: center; margin: 0px 0px 0px 16% !important;' 
-                    data-id='" . $resultado['id'] . "'
-                    data-nome='" . $resultado['nome'] . "' 
+                    data-id='" . $resultado['id_conselheiro'] . "'
+                    data-nome='" . $resultado['nm_conselheiro'] . "' 
                     style='display: flex; margin: 0 27%; justify-content: center;'>Reativar</button>";
                     echo "</td>";
                     echo "</tr>";
@@ -80,7 +80,7 @@
             <!-- <p>Deseja adicionar um novo conselheiro?</p> -->
             <input type="text" name="adicionarConselheiro" id="adicionarConselheiro" autocomplete="off" placeholder="NOME DO CONSELHEIRO">
             <br>
-            <button type="submit" class="btn btn-primary float-left"">Adicionar</button>
+            <button type="submit" class="btn btn-primary float-left">Adicionar</button>
             <button type="reset" id="closeModal1" class="btn btn-secondary float-right">Fechar</button>
         </form>
     </div>
@@ -89,7 +89,7 @@
 
 
 <div class="container-table">
-    <div style=" width: 100%;" class="tableOverflow">
+    <div style=" width: 65%;" class="tableOverflow">
         <table id="tabela-cadastro" style="width: 100%;">
             <thead>
                 <tr class="">
@@ -101,7 +101,7 @@
             <tbody>
             <?php
                 // Preparando a consulta
-                $stmt = $pdo->prepare("SELECT id, nome, Pontuacao_Total FROM conselheiro WHERE excluido = 0 ORDER BY nome");
+                $stmt = $pdo->prepare("SELECT id_conselheiro, nm_conselheiro, vl_pontuacao_conselheiro FROM conselheiro WHERE excluir = 0 ORDER BY nm_conselheiro");
 
                 // Executando a consulta
                 $stmt->execute();
@@ -112,14 +112,14 @@
                 // Iterando sobre os resultados para exibir na tabela
                 foreach ($resultados as $resultado) {
                     echo "<tr>";
-                    echo "<td>" . $resultado['nome'] . "</td>";
-                    echo "<td><button class='btn-acessar' data-id='" . $resultado['id'] . "'>Acessar</button></td>";
-                    echo "<td class='campodesativar'>
-
+                    echo "<td>" . $resultado['nm_conselheiro'] . "</td>";
+                    echo "<td class='acessarDesativar'><button class='btn-acessar' data-id='" . $resultado['id_conselheiro'] . "'><i class='fa-solid fa-check'></i></button></td>";
+                    echo "<td class='campodesativar acessarDesativar'>
+                    
                     <button id='openModal4' class='btn-desativarconselheiro danger btnremove' 
-                            data-id='" . $resultado['id'] . "'
-                            data-nome='" . $resultado['nome'] . "'>Desativar</button>
-                    <input type='hidden' class='id-conselheiro' value='" . $resultado['id'] . "'>
+                            data-id='" . $resultado['id_conselheiro'] . "'
+                            data-nome='" . $resultado['nm_conselheiro'] . "'><i class='fa-solid fa-xmark'></i></button>
+                    <input type='hidden' class='id-conselheiro' value='" . $resultado['id_conselheiro'] . "'>
                     </td>";
                     echo "</tr>";
                 }
@@ -132,12 +132,12 @@
 <?php
 // Iterando novamente para criar os modais correspondentes a cada conselheiro
 foreach ($resultados as $resultado) {
-    echo "<dialog id='modal-acessar-" . $resultado['id'] . "' class='modal modalacessar'>";
+    echo "<dialog id='modal-acessar-" . $resultado['id_conselheiro'] . "' class='modal modalacessar'>";
     echo "<div class='modal-content'>";
-    echo "<h1>" . $resultado['nome'] . "</h1>";
+    echo "<h1>" . $resultado['nm_conselheiro'] . "</h1>";
 
-    echo "<p>Pontuação total: " . $resultado['Pontuacao_Total'] . "</p>";
-    echo "<button type='button' id='closeModal-" . $resultado['id'] . "' class='btn btn-secondary float-right'>Fechar</button>";
+    echo "<p>Pontuação total: " . $resultado['vl_pontuacao_conselheiro'] . "</p>";
+    echo "<button type='button' id='closeModal-" . $resultado['id_conselheiro'] . "' class='btn btn-secondary float-right'>Fechar</button>";
     echo "</div>";
     echo "</dialog>";
 }

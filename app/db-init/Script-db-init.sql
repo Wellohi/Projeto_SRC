@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Jul-2024 às 21:30
+-- Tempo de geração: 26-Jul-2024 às 16:21
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -18,26 +18,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `banco_spc`
+-- Banco de dados: `banco_src`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `condicionantes`
+-- Estrutura da tabela `condicionante`
 --
 
-CREATE TABLE `condicionantes` (
-  `id` int(11) NOT NULL,
-  `nomeCondicionante` varchar(255) NOT NULL,
-  `pontuacao` int(11) NOT NULL
+CREATE TABLE `condicionante` (
+  `id_condicionante` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a condição que o evento terá.',
+  `nm_condicionante` varchar(255) NOT NULL COMMENT 'Nome que a condição evento terá.',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `condicionantes`
+-- Extraindo dados da tabela `condicionante`
 --
 
-INSERT INTO `condicionantes` (`id`, `nomeCondicionante`, `pontuacao`) VALUES
+INSERT INTO `condicionante` (`id_condicionante`, `nm_condicionante`, `vl_pontuacao_conselheiro`) VALUES
 (2, 'CONDIÇÔES CONDICIONANTES', 20);
 
 -- --------------------------------------------------------
@@ -47,17 +47,17 @@ INSERT INTO `condicionantes` (`id`, `nomeCondicionante`, `pontuacao`) VALUES
 --
 
 CREATE TABLE `conselheiro` (
-  `ID` int(11) NOT NULL,
-  `Nome` varchar(255) NOT NULL,
-  `Pontuacao_Total` int(11) DEFAULT 0,
-  `excluido` tinyint(1) DEFAULT 0
+  `id_conselheiro` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o conselheiro que foi cadastrado.',
+  `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.',
+  `excluir` tinyint(1) DEFAULT 0 COMMENT 'exclusão de conselheiro.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `conselheiro`
 --
 
-INSERT INTO `conselheiro` (`ID`, `Nome`, `Pontuacao_Total`, `excluido`) VALUES
+INSERT INTO `conselheiro` (`id_conselheiro`, `nm_conselheiro`, `vl_pontuacao_conselheiro`, `excluir`) VALUES
 (17, 'Carlos Henrique do Nascimento', 0, 1),
 (18, 'Andrezza Carolina Brito Farias', 0, 1),
 (19, 'Wellington do Carmo Cruz', 0, 0),
@@ -120,19 +120,19 @@ INSERT INTO `conselheiro` (`ID`, `Nome`, `Pontuacao_Total`, `excluido`) VALUES
 --
 
 CREATE TABLE `evento` (
-  `ID` int(11) NOT NULL,
-  `Nome` varchar(255) NOT NULL,
-  `Tipo` varchar(255) NOT NULL,
-  `Condicionante` varchar(255) NOT NULL,
-  `Data_Evento` date NOT NULL,
-  `Pontuacao` int(11) NOT NULL
+  `id_evento` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o evento.',
+  `nm_evento` varchar(255) NOT NULL COMMENT 'Nome que o evento terá.',
+  `tp_evento` varchar(255) NOT NULL COMMENT 'Definindo um tipo para o evento.',
+  `nm_condicionante` varchar(255) NOT NULL COMMENT 'Nome que a condição evento terá.',
+  `dt_evento` date NOT NULL COMMENT 'A data que determinara o evento. ',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `evento`
 --
 
-INSERT INTO `evento` (`ID`, `Nome`, `Tipo`, `Condicionante`, `Data_Evento`, `Pontuacao`) VALUES
+INSERT INTO `evento` (`id_evento`, `nm_evento`, `tp_evento`, `nm_condicionante`, `dt_evento`, `vl_pontuacao_conselheiro`) VALUES
 (3, 'teste', 'Reunião do Conselho Diretor do CFC', 'CONDITC', '2024-05-28', 0),
 (25, 'TESTETESTETESTE', 'Reunião Plenária - CRC', 'CONDIÇÔES CONDICIONANTES', '2121-12-12', 0),
 (28, 'Adicionando evento', 'Reunião Plenária - CRC', 'CONDIÇÔES CONDICIONANTES', '2024-07-08', 0),
@@ -145,10 +145,10 @@ INSERT INTO `evento` (`ID`, `Nome`, `Tipo`, `Condicionante`, `Data_Evento`, `Pon
 --
 
 CREATE TABLE `gestor` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(30) NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `senha` varchar(30) NOT NULL
+  `id_gestor` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o perfil gestor.',
+  `nm_gestor` varchar(255) NOT NULL COMMENT 'Nome que o usuario terá.',
+  `tx_email_gestor` varchar(255) NOT NULL COMMENT 'Email que o usuario terá.',
+  `bn_senha_gestor` varchar(255) NOT NULL COMMENT 'Senha que o usuario terá.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -158,9 +158,10 @@ CREATE TABLE `gestor` (
 --
 
 CREATE TABLE `participacao` (
-  `ID_Conselheiro` int(11) NOT NULL,
-  `ID_Evento` int(11) NOT NULL,
-  `Pontuacao` int(11) NOT NULL
+ `id_participacao` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a participação do conselheiro que foi cadastrado.',
+  `id_conselheiro` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o conselheiro que foi cadastrado.',
+  `id_evento` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o evento.',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -170,103 +171,103 @@ CREATE TABLE `participacao` (
 --
 
 CREATE TABLE `plenario` (
-  `Nome` varchar(255) NOT NULL,
-  `Data` date NOT NULL,
-  `Vagas` int(11) NOT NULL,
-  `Tipo` varchar(255) NOT NULL,
-  `Condicionante` varchar(255) NOT NULL,
-  `Local` varchar(255) NOT NULL,
-  `ID` int(11) NOT NULL
+  `id_plenario` int(11) NOT NULL COMMENT PRIMARY KEY AUTO_INCREMENT 'Campo, chave primaria, para identificar o evento plenario cadastrado.',
+  `nm_plenario` varchar(255) NOT NULL COMMENT 'Nome que o evento plenario terá.',
+  `dt_plenario` date NOT NULL COMMENT 'A data que determinara o evento plenario. ',
+  `qt_vagas` int(11) NOT NULL COMMENT 'Quantidade de vagas que o evento plenario terá.',
+  `tp_plenario` varchar(255) NOT NULL COMMENT 'Definindo um tipo para o evento plenario.',
+  `nm_condicionante` varchar(255) NOT NULL COMMENT 'Nome que a condição evento terá.',
+  `sg_estado_uf` char(2) NOT NULL COMMENT 'Campo, que defini o estado aonde o evento plenario irá acontecer.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `plenario`
 --
 
-INSERT INTO `plenario` (`Nome`, `Data`, `Vagas`, `Tipo`, `Condicionante`, `Local`, `ID`) VALUES
-('such a lovely', '0000-00-00', 3, 'Reunião Plenária', 'CONDIÇÔES CONDICIONANTES', 'CABANA', 2),
-('teste', '2001-12-12', 10, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Brasilia', 4),
-('testeteste', '5110-02-05', 2, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Taguatinga', 5),
-('pena', '2111-02-21', 2, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'São Paulo', 6),
-('clash ', '2000-12-12', 20, 'Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC', 'CONDIÇÔES CONDICIONANTES', 'Rio de Janeiro', 7);
+INSERT INTO `plenario` (`id_plenario`, `nm_plenario`, `dt_plenario`, `qt_vagas`, `tp_plenario`, `nm_condicionante`, `sg_estado_uf`) VALUES
+(2, 'such a lovely', '0000-00-00', 3, 'Reunião Plenária', 'CONDIÇÔES CONDICIONANTES', 'CA'),
+(4, 'teste', '2001-12-12', 10, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Br'),
+(5, 'testeteste', '5110-02-05', 2, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Ta'),
+(6, 'pena', '2111-02-21', 2, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Sã'),
+(7, 'clash ', '2000-12-12', 20, 'Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC', 'CONDIÇÔES CONDICIONANTES', 'Ri');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ranking`
+-- Estrutura da tabela `pontuacao`
 --
 
-CREATE TABLE `ranking` (
-  `id` int(11) NOT NULL,
-  `pontuacao` int(11) NOT NULL,
-  `conselheiro` varchar(40) NOT NULL,
-  `data` varchar(30) NOT NULL,
-  `evento` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `rankingeventos`
---
-
-CREATE TABLE `rankingeventos` (
-  `id` int(11) NOT NULL,
-  `pontuacao` int(11) NOT NULL,
-  `evento` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tabelaconselheiros`
---
-
-CREATE TABLE `tabelaconselheiros` (
-  `id` int(11) NOT NULL,
-  `pontuacao` int(11) NOT NULL,
-  `conselheiro` varchar(40) NOT NULL,
-  `data` varchar(20) NOT NULL,
-  `evento` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tabela_pontuacao_total`
---
-
-CREATE TABLE `tabela_pontuacao_total` (
-  `id` int(11) NOT NULL,
-  `nome_do_conselheiro` varchar(255) NOT NULL,
-  `pontuacao_do_conselheiro` int(11) NOT NULL
+CREATE TABLE `pontuacao` (
+  `id_pontuacao` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a pontuação que o evento terá.',
+  `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tabela_pontuacao_total`
+-- Extraindo dados da tabela `pontuacao`
 --
 
-INSERT INTO `tabela_pontuacao_total` (`id`, `nome_do_conselheiro`, `pontuacao_do_conselheiro`) VALUES
+INSERT INTO `pontuacao` (`id_pontuacao`, `nm_conselheiro`, `vl_pontuacao_conselheiro`) VALUES
 (1, 'Carlos Henrique do Nascimento', 1),
 (2, 'Andrezza Carolina Brito Farias', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipoevento`
+-- Estrutura da tabela `ranqueamento`
 --
 
-CREATE TABLE `tipoevento` (
-  `id` int(11) NOT NULL,
-  `nomeTipoEvento` varchar(255) NOT NULL,
-  `pontuacao` int(11) NOT NULL
+CREATE TABLE `ranqueamento` (
+  `id_ranqueamento` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a posição onde o conselheiro se encontra.',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.',
+  `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
+  `dt_ranqueamento` varchar(255) NOT NULL COMMENT 'A data que determinara quando o reanqueamento foi criado. ',
+  `nm_evento` varchar(255) NOT NULL COMMENT 'Nome que o evento terá.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ranqueamento_evento`
+--
+
+CREATE TABLE `ranqueamento_evento` (
+  `id_ranqueamento_evento` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a posição onde o conselheiro evento se encontra.',
+  `nm_evento` varchar(255) NOT NULL COMMENT 'Nome que o evento terá.',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tabela_conselheiro`
+--
+
+CREATE TABLE `tabela_conselheiro` (
+  `id_tabela_conselheiro` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a tabela do conselheiro se encontra.',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.',
+  `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
+  `dt_tabela_conselheiro` varchar(255) NOT NULL COMMENT 'A data que determinara a criação da tabela conselheiro. ',
+  `nm_evento` varchar(255) NOT NULL COMMENT 'Nome que o evento terá.'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipo_evento`
+--
+
+CREATE TABLE `tipo_evento` (
+  `id_tipo_evento` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o tipo do evento.',
+  `nm_tipo_evento` varchar(255) NOT NULL COMMENT 'Definindo um tipo para o evento.',
+  `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tipoevento`
+-- Extraindo dados da tabela `tipo_evento`
 --
 
-INSERT INTO `tipoevento` (`id`, `nomeTipoEvento`, `pontuacao`) VALUES
+INSERT INTO `tipo_evento` (`id_tipo_evento`, `nm_tipo_evento`, `vl_pontuacao_conselheiro`) VALUES
 (1, 'Reunião Plenária', 1),
 (2, 'Reunião Plenária - CRC', 1),
 (3, 'Reunião do Tribunal Superior de Ética e Disciplina', 1),
@@ -286,172 +287,172 @@ INSERT INTO `tipoevento` (`id`, `nomeTipoEvento`, `pontuacao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura da tabela `usuario`
 --
 
-CREATE TABLE `usuarios` (
-  `email` varchar(100) NOT NULL,
-  `senha` varchar(100) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `adm` int(1) NOT NULL,
-  `id` int(11) NOT NULL
+CREATE TABLE `usuario` (
+  `id_usuario` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o usario.',
+  `tx_emai_usuario` varchar(255) NOT NULL COMMENT 'Email que o usuario terá.',
+  `bn_senha_usuario` varchar(255) NOT NULL COMMENT 'Senha que o usuario terá.',
+  `nm_usuario` varchar(255) NOT NULL COMMENT 'Nome que o usuario terá.',
+  `adm_usuario` int(1) NOT NULL COMMENT 'Determina o tipo de usuario sendo ele administrador ou gestor.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuarios` (`email`, `senha`, `nome`, `adm`, `id`) VALUES
-('teste@teste.com', 'teste', 'teste', 0, 2),
-('admin@admin.com', 'admin', 'admin', 1, 3),
-('denise.silva@cfc.org.br', 'admin', 'denise.silva', 1, 4);
+INSERT INTO `usuario` (`id_usuario`, `tx_emai_usuario`, `bn_senha_usuario`, `nm_usuario`, `adm_usuario`) VALUES
+(2, 'teste@teste.com', 'teste', 'teste', 0),
+(3, 'admin@admin.com', 'admin', 'admin', 1),
+(4, 'denise.silva@cfc.org.br', 'admin', 'denise.silva', 1);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `condicionantes`
+-- Índices para tabela `condicionante`
 --
-ALTER TABLE `condicionantes`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `condicionante`
+  ADD PRIMARY KEY (`id_condicionante`);
 
 --
 -- Índices para tabela `conselheiro`
 --
 ALTER TABLE `conselheiro`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id_conselheiro`);
 
 --
 -- Índices para tabela `evento`
 --
 ALTER TABLE `evento`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id_evento`);
 
 --
 -- Índices para tabela `gestor`
 --
 ALTER TABLE `gestor`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_gestor`);
 
 --
 -- Índices para tabela `participacao`
 --
 ALTER TABLE `participacao`
-  ADD PRIMARY KEY (`ID_Conselheiro`,`ID_Evento`),
-  ADD KEY `ID_Evento` (`ID_Evento`);
+  ADD PRIMARY KEY (`id_conselheiro`,`id_evento`),
+  ADD KEY `ID_Evento` (`id_evento`);
 
 --
 -- Índices para tabela `plenario`
 --
 ALTER TABLE `plenario`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id_plenario`);
 
 --
--- Índices para tabela `ranking`
+-- Índices para tabela `pontuacao`
 --
-ALTER TABLE `ranking`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `pontuacao`
+  ADD PRIMARY KEY (`id_pontuacao`);
 
 --
--- Índices para tabela `rankingeventos`
+-- Índices para tabela `ranqueamento`
 --
-ALTER TABLE `rankingeventos`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `ranqueamento`
+  ADD PRIMARY KEY (`id_ranqueamento`);
 
 --
--- Índices para tabela `tabelaconselheiros`
+-- Índices para tabela `ranqueamento_evento`
 --
-ALTER TABLE `tabelaconselheiros`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `ranqueamento_evento`
+  ADD PRIMARY KEY (`id_ranqueamento_evento`);
 
 --
--- Índices para tabela `tabela_pontuacao_total`
+-- Índices para tabela `tabela_conselheiro`
 --
-ALTER TABLE `tabela_pontuacao_total`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `tabela_conselheiro`
+  ADD PRIMARY KEY (`id_tabela_conselheiro`);
 
 --
--- Índices para tabela `tipoevento`
+-- Índices para tabela `tipo_evento`
 --
-ALTER TABLE `tipoevento`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `tipo_evento`
+  ADD PRIMARY KEY (`id_tipo_evento`);
 
 --
--- Índices para tabela `usuarios`
+-- Índices para tabela `usuario`
 --
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de tabela `condicionantes`
+-- AUTO_INCREMENT de tabela `condicionante`
 --
-ALTER TABLE `condicionantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de tabela `conselheiro`
---
-ALTER TABLE `conselheiro`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+ALTER TABLE `condicionante`
+  MODIFY `id_condicionante` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a condição que o evento terá.', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o evento.', AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `gestor`
 --
 ALTER TABLE `gestor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_gestor` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o perfil gestor.';
+
+--
+-- AUTO_INCREMENT de tabela `participacao`
+--
+ALTER TABLE `participacao`
+  MODIFY `id_conselheiro` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o conselheiro que foi cadastrado.';
 
 --
 -- AUTO_INCREMENT de tabela `plenario`
 --
 ALTER TABLE `plenario`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_plenario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o evento plenario cadastrado.', AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de tabela `ranking`
+-- AUTO_INCREMENT de tabela `pontuacao`
 --
-ALTER TABLE `ranking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pontuacao`
+  MODIFY `id_pontuacao` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a pontuação que o evento terá.', AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `rankingeventos`
+-- AUTO_INCREMENT de tabela `ranqueamento`
 --
-ALTER TABLE `rankingeventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `ranqueamento`
+  MODIFY `id_ranqueamento` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a posição onde o conselheiro se encontra.';
 
 --
--- AUTO_INCREMENT de tabela `tabelaconselheiros`
+-- AUTO_INCREMENT de tabela `ranqueamento_evento`
 --
-ALTER TABLE `tabelaconselheiros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `ranqueamento_evento`
+  MODIFY `id_ranqueamento_evento` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a posição onde o conselheiro evento se encontra.';
 
 --
--- AUTO_INCREMENT de tabela `tabela_pontuacao_total`
+-- AUTO_INCREMENT de tabela `tabela_conselheiro`
 --
-ALTER TABLE `tabela_pontuacao_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `tabela_conselheiro`
+  MODIFY `id_tabela_conselheiro` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a tabela do conselheiro se encontra.';
 
 --
--- AUTO_INCREMENT de tabela `tipoevento`
+-- AUTO_INCREMENT de tabela `tipo_evento`
 --
-ALTER TABLE `tipoevento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `tipo_evento`
+  MODIFY `id_tipo_evento` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o tipo do evento.', AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT de tabela `usuarios`
+-- AUTO_INCREMENT de tabela `usuario`
 --
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o usario.', AUTO_INCREMENT=5;
 
 --
 -- Restrições para despejos de tabelas
@@ -461,8 +462,8 @@ ALTER TABLE `usuarios`
 -- Limitadores para a tabela `participacao`
 --
 ALTER TABLE `participacao`
-  ADD CONSTRAINT `participacao_ibfk_1` FOREIGN KEY (`ID_Conselheiro`) REFERENCES `conselheiro` (`ID`),
-  ADD CONSTRAINT `participacao_ibfk_2` FOREIGN KEY (`ID_Evento`) REFERENCES `evento` (`ID`);
+  ADD CONSTRAINT `participacao_ibfk_1` FOREIGN KEY (`id_conselheiro`) REFERENCES `conselheiro` (`id_conselheiro`),
+  ADD CONSTRAINT `participacao_ibfk_2` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -6,22 +6,22 @@
 
     <button class="tablinks" onclick="openTab(event, 'conselheiro')"><i class="fa-solid fa-user-group"></i> Conselheiros</button>
 
-    <?php if ($adm) : ?>
+    <?php if ($adm_usuario) : ?>
         <button class="tablinks" onclick="openTab(event, 'eventos')"><i class="fa-solid fa-calendar-days"></i>
             Eventos</button>
     <?php endif; ?>
 
-    <?php if ($adm) : ?>
+    <?php if ($adm_usuario) : ?>
         <button class="tablinks" onclick="openTab(event, 'plenario')">
             <i class="fa-solid fa-earth-americas"></i>
             Plenário</button>
     <?php endif; ?>
 
-    <button class="tablinks" onclick="openTab(event, 'Ranking')">
+    <button class="tablinks" onclick="openTab(event, 'ranqueamento')">
         <i class="fa-solid fa-arrow-trend-up"></i>
         Ranking</button>
 
-    <?php if ($adm) : ?>
+    <?php if ($adm_usuario) : ?>
         <button class="tablinks" onclick="openTab(event, 'opcoes')"><i class="fa fa-cogs" aria-hidden="true"></i>
             opções</button>
     <?php endif; ?>

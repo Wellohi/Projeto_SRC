@@ -18,7 +18,6 @@
         <div class="card">
             <div class="card-title">
                 <p>Adicionar Tipo do Evento</p>
-                <span>(pontuacao)</span>
             </div>
 
             <div class="icone-card">
@@ -57,11 +56,11 @@
     <div class="modal-content">
         <form method="post" action="../backend/insert_Gestor.php">
             <!-- <p>Deseja adicionar um novo Gestor?</p> -->
-            <input type="text" name="nome" id="nome" autocomplete="off" style="width: 100% !important;" placeholder="NOME DO GESTOR" required>
+            <input type="text" name="nm_gesto" id="nome" autocomplete="off" style="width: 100% !important;" placeholder="NOME DO GESTOR" required>
             <br>
-            <input type="email" name="email" id="email" style="width: 100% !important;" placeholder="INSIRA O E-MAIL DO GESTOR" required>
+            <input type="email" name="tx_email_gestor" id="email" style="width: 100% !important;" placeholder="INSIRA O E-MAIL DO GESTOR" required>
             <br>
-            <input type="password" name="senha" id="senha" style="width: 100% !important;" placeholder="INSIRA UMA SENHA PARA O GESTOR" required>
+            <input type="password" name="bn_senha_gestor" id="senha" style="width: 100% !important;" placeholder="INSIRA UMA SENHA PARA O GESTOR" required>
             <br>
             <button type="submit" class="btn btn-primary float-left">Adicionar</button>
             <button type="reset" id="closeModal13" class="btn btn-secondary float-right">Fechar</button>
@@ -80,7 +79,7 @@
         </form>
     </div>
 </dialog>
-<dialog id="modal9" class="modal" style="min-height: 310px; !important">
+<dialog id="modal9" class="modal" style="min-height: 310px;">
     <div class="modal-content">
         <!-- <h2>Adicionar Tipo Evento</h2> -->
         <form>
@@ -97,7 +96,7 @@
             <h4>Nome da Condicionante</h4>
             <input placeholder="NOME" type="text" class="inputOpcoes" name="adicionarCondicionante" id="adicionarCondicionante">
             <h4>Pontuação da Condicionante</h4>
-            <input placeholder="PONTUAÇÃO" type="number" class="inputOpcoes" name="pontuacao" id="pontuacao">
+            <input placeholder="PONTUAÇÃO" type="number" class="inputOpcoes" name="vl_pontuacao_conselheiro" id="pontuacao">
             <button type="submit" id="openModal3" class="btn btn-primary modalbtn">Adicionar</button>
             <button type="reset" id="closeModal3" class="btn btn-secondary modalbtn">Fechar</button>
         </form>

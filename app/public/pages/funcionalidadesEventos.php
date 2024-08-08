@@ -8,7 +8,7 @@
 
         const nomeDoEvento = document.getElementById("inputNomeDoEvento").value;
         const dataDoEvento = document.getElementById("inputDataDoEvento").value;
-        const tipoDoEvento = document.getElementById("tipoEvento").value;
+        const tipoDoEvento = document.getElementById("tipoevento").value;
         const condicionante =document.getElementById("eventoCondicionante").value;
         const pontuacaoDoEvento = document.getElementById("pontuacao").value;
         const tipoEventoSpan = document.createElement("span");
@@ -123,7 +123,7 @@
         // event.submit(this.formularioAdicionarEvento);
     });
 
-    function openModalEvento(id, nome, tipo, condicionante, data, pontuacao) {
+    function openModalEvento(id_evento, nm_evento, tp_evento, nm_condicionante, dt_evento, vl_pontuacao_conselheiro) {
     // Definir os valores no modal
     // document.querySelector('#eventosTable #eventoId').textContent = id;
     // document.querySelector('#eventosTable #eventoNome').textContent = nome;
@@ -140,7 +140,7 @@
         document.querySelector('#modal-acessarEvento').close();
     }
 
-    function excluirCard(id) {
+    function excluirCard(id_evento) {
         if (confirm("O evento será excluido PERMANENTEMENTE, você deseja excluir?")) {
             // Enviar solicitação de exclusão para arquivo PHP
             var xhttp = new XMLHttpRequest();
@@ -152,12 +152,12 @@
             };
             xhttp.open("POST", "../backend/excluirCard.php", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("id=" + id);
+            xhttp.send("id=" + id_evento);
         }
     }
 
     
-    function excluirCardPlenario(id) {
+    function excluirCardPlenario(id_plenario) {
     if (confirm("O plenario será excluido PERMANENTEMENTE, você deseja excluir?")) {
         // Enviar solicitação de exclusão para arquivo PHP
         var xhttp = new XMLHttpRequest();
@@ -169,7 +169,7 @@
         };
         xhttp.open("POST", "../backend/excluirCardplenario.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("id=" + id);
+        xhttp.send("id=" + id_plenario);
     }
 }
 

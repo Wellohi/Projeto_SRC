@@ -8,8 +8,8 @@ include_once('../backend/consultas.php');
 session_start();
 
 if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
-  $adm = $_SESSION["users"][1];
-  $email = $_SESSION["users"][0];
+  $adm_usuario = $_SESSION["users"][1];
+  $tx_emai_usuario = $_SESSION["users"][0];
 } else {
   echo "<script>window.location = '../index.php'</script>";
 }
@@ -42,8 +42,11 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
 
     <!-- Tipo de perfil -->
     <div class="tipoperfil">
-      <?php if ($adm) : ?>
-        <h1> Seu Perfil é de Administrador Do Sistema </h1>
+      <?php if ($adm_usuario) : ?>
+        <h1> Perfil de Administrador </h1>
+        <?php else: ?>
+          <h1> Perfil Gestor </h1>
+
       <?php endif; ?>
 
     </div>
@@ -90,7 +93,7 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
       </div>
 
       <!-- Page de opções -->
-      <?php if ($adm) : ?>
+      <?php if ($adm_usuario) : ?>
         <div id="opcoes" class="tabcontent">
           <?php include_once('./opcoes.php'); ?>
         </div>
@@ -101,8 +104,8 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
         <?php include_once('./plenario.php'); ?>
       </div>
 
-      <div id="Ranking" class="tabcontent">
-        <?php include_once('./ranking.php'); ?>
+      <div id="ranqueamento" class="tabcontent">
+        <?php include_once('./ranqueamento.php'); ?>
       </div>
 
       <!-- Page de Pontuação Acumulada -->
