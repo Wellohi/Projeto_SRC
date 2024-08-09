@@ -15,29 +15,43 @@ $stmt->bindValue(':nm_conselheiro', '%' . $nomePesquisado . '%');
 $stmt->execute();
 
 // iterar sobre os resultados e gerar a tabela HTML correspondente
+// foreach ($stmt as $resultado) {
+//     echo "<tr>";
+//     echo "<td>" . $resultado['nm_conselheiro'] . "</td>";
+//     echo "<td><button class='btn-acessar' data-id='" . $resultado['id_conselheiro'] . "'>Acessar</button></td>";
+//     echo "<td class='campodesativar'>
+//         <button id='openModal4' class='btn danger btnremove' 
+//                 data-id='" . $resultado['id_conselheiro'] . "'
+//                 data-nome='" . $resultado['nm_conselheiro'] . "'>Desativar</button>
+//         <input type='hidden' class='id-conselheiro' value='" . $resultado['id_conselheiro'] . "'>
+//         </td>";
+//     echo "</tr>";
+// }
+
 foreach ($stmt as $resultado) {
     echo "<tr>";
     echo "<td>" . $resultado['nm_conselheiro'] . "</td>";
-    echo "<td><button class='btn-acessar' data-id='" . $resultado['id_conselheiro'] . "'>Acessar</button></td>";
-    echo "<td class='campodesativar'>
-        <button id='openModal4' class='btn danger btnremove' 
-                data-id='" . $resultado['id_conselheiro'] . "'
-                data-nome='" . $resultado['nm_conselheiro'] . "'>Desativar</button>
-        <input type='hidden' class='id-conselheiro' value='" . $resultado['id_conselheiro'] . "'>
-        </td>";
+    echo "<td class='acessarDesativar'><button class='btn-acessar' data-id='" . $resultado['id_conselheiro'] . "'><i class='fa-solid fa-check'></i></button></td>";
+    echo "<td class='campodesativar acessarDesativar'>
+    
+    <button id='openModal4' class='btn-desativarconselheiro danger btnremove' 
+            data-id='" . $resultado['id_conselheiro'] . "'
+            data-nome='" . $resultado['nm_conselheiro'] . "'><i class='fa-solid fa-xmark'></i></button>
+    <input type='hidden' class='id-conselheiro' value='" . $resultado['id_conselheiro'] . "'>
+    </td>";
     echo "</tr>";
 }
 ?>
 
 <?php
 // Iterando novamente para criar os modais correspondentes a cada conselheiro
-foreach ($stmt as $resultado) {
-    echo "<dialog id='modal-acessar-" . $resultado['id_conselheiro'] . "' class='modal'>";
+foreach ($resultados as $resultado) {
+    echo "<dialog id='modal-acessar-" . $resultado['id_conselheiro'] . "' class='modal modalacessar'>";
     echo "<div class='modal-content'>";
     echo "<h1>" . $resultado['nm_conselheiro'] . "</h1>";
-    echo "<h2>" . $resultado['id_conselheiro'] . "</h2>";
-    echo "<p>Pontuação total: " . $resultado['Pontuacao_Total'] . "</p>";
-    // Adicione aqui as informações que deseja exibir no modal
+
+    echo "<p>Pontuação total: " . $resultado['vl_pontuacao_conselheiro'] . "</p>";
+    echo "<button type='button' id='closeModal-" . $resultado['id_conselheiro'] . "' class='btn btn-secondary float-right'>Fechar</button>";
     echo "</div>";
     echo "</dialog>";
 }
@@ -47,8 +61,8 @@ foreach ($stmt as $resultado) {
     var btnRemove = document.getElementsByClassName('btnremove');
     for (var i = 0; i < btnRemove.length; i++) {
         btnRemove[i].addEventListener('click', function() {
-            var idConselheiro = this.dataset.id_conselheiro;
-            var nomeConselheiro = this.dataset.nm_conselheiro;
+            var idConselheiro = this.dataset.id;
+            var nomeConselheiro = this.dataset.nome;
             document.getElementById('nome-conselheiro').textContent = nomeConselheiro;
             document.getElementById('conselheiro-desativar').value = nomeConselheiro;
             document.getElementById('id-conselheiro-desativar').value = idConselheiro; // novo
