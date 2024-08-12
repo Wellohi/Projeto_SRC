@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `condicionante` (
-  `id_condicionante` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a condição que o evento terá.',
+  `id_condicionante` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a condição que o evento terá.',
   `nm_condicionante` varchar(255) NOT NULL COMMENT 'Nome que a condição evento terá.',
   `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -47,7 +47,7 @@ INSERT INTO `condicionante` (`id_condicionante`, `nm_condicionante`, `vl_pontuac
 --
 
 CREATE TABLE `conselheiro` (
-  `id_conselheiro` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o conselheiro que foi cadastrado.',
+  `id_conselheiro` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o conselheiro que foi cadastrado.',
   `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
   `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.',
   `excluir` tinyint(1) DEFAULT 0 COMMENT 'exclusão de conselheiro.'
@@ -120,7 +120,7 @@ INSERT INTO `conselheiro` (`id_conselheiro`, `nm_conselheiro`, `vl_pontuacao_con
 --
 
 CREATE TABLE `evento` (
-  `id_evento` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o evento.',
+  `id_evento` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o evento.',
   `nm_evento` varchar(255) NOT NULL COMMENT 'Nome que o evento terá.',
   `tp_evento` varchar(255) NOT NULL COMMENT 'Definindo um tipo para o evento.',
   `nm_condicionante` varchar(255) NOT NULL COMMENT 'Nome que a condição evento terá.',
@@ -145,7 +145,7 @@ INSERT INTO `evento` (`id_evento`, `nm_evento`, `tp_evento`, `nm_condicionante`,
 --
 
 CREATE TABLE `gestor` (
-  `id_gestor` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o perfil gestor.',
+  `id_gestor` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o perfil gestor.',
   `nm_gestor` varchar(255) NOT NULL COMMENT 'Nome que o usuario terá.',
   `tx_email_gestor` varchar(255) NOT NULL COMMENT 'Email que o usuario terá.',
   `bn_senha_gestor` varchar(255) NOT NULL COMMENT 'Senha que o usuario terá.'
@@ -158,7 +158,7 @@ CREATE TABLE `gestor` (
 --
 
 CREATE TABLE `participacao` (
- `id_participacao` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a participação do conselheiro que foi cadastrado.',
+ `id_participacao` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a participação do conselheiro que foi cadastrado.',
   `id_conselheiro` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o conselheiro que foi cadastrado.',
   `id_evento` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o evento.',
   `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
@@ -171,13 +171,13 @@ CREATE TABLE `participacao` (
 --
 
 CREATE TABLE `plenario` (
-  `id_plenario` int(11) NOT NULL COMMENT PRIMARY KEY AUTO_INCREMENT 'Campo, chave primaria, para identificar o evento plenario cadastrado.',
-  `nm_plenario` varchar(255) NOT NULL COMMENT 'Nome que o evento plenario terá.',
-  `dt_plenario` date NOT NULL COMMENT 'A data que determinara o evento plenario. ',
-  `qt_vagas` int(11) NOT NULL COMMENT 'Quantidade de vagas que o evento plenario terá.',
-  `tp_plenario` varchar(255) NOT NULL COMMENT 'Definindo um tipo para o evento plenario.',
-  `nm_condicionante` varchar(255) NOT NULL COMMENT 'Nome que a condição evento terá.',
-  `sg_estado_uf` char(2) NOT NULL COMMENT 'Campo, que defini o estado aonde o evento plenario irá acontecer.'
+  `id_plenario` int(11) NOT NULL COMMENT 'Campo, chave primária, para identificar o evento plenário cadastrado.',
+  `nm_plenario` varchar(255) NOT NULL COMMENT 'Nome que o evento plenário terá.',
+  `dt_plenario` date NOT NULL COMMENT 'A data que determinará o evento plenário.',
+  `qt_vagas` int(11) NOT NULL COMMENT 'Quantidade de vagas que o evento plenário terá.',
+  `tp_plenario` varchar(255) NOT NULL COMMENT 'Definindo um tipo para o evento plenário.',
+  `nm_condicionante` varchar(255) NOT NULL COMMENT 'Nome que a condição do evento terá.',
+  `sg_estado_uf` char(2) NOT NULL COMMENT 'Campo que define o estado onde o evento plenário irá acontecer.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -198,7 +198,7 @@ INSERT INTO `plenario` (`id_plenario`, `nm_plenario`, `dt_plenario`, `qt_vagas`,
 --
 
 CREATE TABLE `pontuacao` (
-  `id_pontuacao` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a pontuação que o evento terá.',
+  `id_pontuacao` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a pontuação que o evento terá.',
   `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
   `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -218,7 +218,7 @@ INSERT INTO `pontuacao` (`id_pontuacao`, `nm_conselheiro`, `vl_pontuacao_conselh
 --
 
 CREATE TABLE `ranqueamento` (
-  `id_ranqueamento` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a posição onde o conselheiro se encontra.',
+  `id_ranqueamento` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a posição onde o conselheiro se encontra.',
   `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.',
   `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
   `dt_ranqueamento` varchar(255) NOT NULL COMMENT 'A data que determinara quando o reanqueamento foi criado. ',
@@ -232,7 +232,7 @@ CREATE TABLE `ranqueamento` (
 --
 
 CREATE TABLE `ranqueamento_evento` (
-  `id_ranqueamento_evento` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a posição onde o conselheiro evento se encontra.',
+  `id_ranqueamento_evento` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a posição onde o conselheiro evento se encontra.',
   `nm_evento` varchar(255) NOT NULL COMMENT 'Nome que o evento terá.',
   `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -244,11 +244,10 @@ CREATE TABLE `ranqueamento_evento` (
 --
 
 CREATE TABLE `tabela_conselheiro` (
-  `id_tabela_conselheiro` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar a tabela do conselheiro se encontra.',
+  `id_tabela_conselheiro` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar a tabela do conselheiro se encontra.',
   `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.',
   `nm_conselheiro` varchar(255) NOT NULL COMMENT 'Nome que o conselheiro terá.',
-  `dt_tabela_conselheiro` varchar(255) NOT NULL COMMENT 'A data que determinara a criação da tabela conselheiro. ',
-  `nm_evento` varchar(255) NOT NULL COMMENT 'Nome que o evento terá.'
+  `dt_tabela_conselheiro` varchar(255) NOT NULL COMMENT 'A data que determinara a criação da tabela conselheiro. '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -258,7 +257,7 @@ CREATE TABLE `tabela_conselheiro` (
 --
 
 CREATE TABLE `tipo_evento` (
-  `id_tipo_evento` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o tipo do evento.',
+  `id_tipo_evento` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o tipo do evento.',
   `nm_tipo_evento` varchar(255) NOT NULL COMMENT 'Definindo um tipo para o evento.',
   `vl_pontuacao_conselheiro` int(11) NOT NULL DEFAULT 0 COMMENT 'Valor da pontuação que o conselheiro adriu.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -291,7 +290,7 @@ INSERT INTO `tipo_evento` (`id_tipo_evento`, `nm_tipo_evento`, `vl_pontuacao_con
 --
 
 CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o usario.',
+  `id_usuario` int(11) NOT NULL COMMENT 'Campo, chave primaria, para identificar o usario.',
   `tx_emai_usuario` varchar(255) NOT NULL COMMENT 'Email que o usuario terá.',
   `bn_senha_usuario` varchar(255) NOT NULL COMMENT 'Senha que o usuario terá.',
   `nm_usuario` varchar(255) NOT NULL COMMENT 'Nome que o usuario terá.',
@@ -339,8 +338,7 @@ ALTER TABLE `gestor`
 -- Índices para tabela `participacao`
 --
 ALTER TABLE `participacao`
-  ADD PRIMARY KEY (`id_conselheiro`,`id_evento`),
-  ADD KEY `ID_Evento` (`id_evento`);
+  ADD PRIMARY KEY (`id_participacao`);
 
 --
 -- Índices para tabela `plenario`
@@ -410,7 +408,7 @@ ALTER TABLE `gestor`
 -- AUTO_INCREMENT de tabela `participacao`
 --
 ALTER TABLE `participacao`
-  MODIFY `id_conselheiro` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o conselheiro que foi cadastrado.';
+  MODIFY `id_participacao` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o conselheiro que foi cadastrado.';
 
 --
 -- AUTO_INCREMENT de tabela `plenario`
@@ -459,12 +457,12 @@ ALTER TABLE `usuario`
 --
 
 --
--- Limitadores para a tabela `participacao`
---
-ALTER TABLE `participacao`
-  ADD CONSTRAINT `participacao_ibfk_1` FOREIGN KEY (`id_conselheiro`) REFERENCES `conselheiro` (`id_conselheiro`),
-  ADD CONSTRAINT `participacao_ibfk_2` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`);
-COMMIT;
+-- -- Limitadores para a tabela `participacao`
+-- --
+-- ALTER TABLE `participacao`
+--   ADD CONSTRAINT `participacao_ibfk_1` FOREIGN KEY (`id_conselheiro`) REFERENCES `conselheiro` (`id_conselheiro`),
+--   ADD CONSTRAINT `participacao_ibfk_2` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`);
+-- COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
