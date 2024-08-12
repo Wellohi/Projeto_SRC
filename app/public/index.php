@@ -52,7 +52,7 @@ require_once('./backend/conexao.php');
                     <button type="submit">Acessar</button>
                 </div>
                 <div style="padding-left: 10px; color: #cccccc; font-size: 13px;" >Sistema de Ranqueamento de Conselheiros</div>
-                <div class="versao">v 1.0.1</div>
+                <div class="versao">v 1.0.2</div>
             </fieldset>
         </form>
     </main>
