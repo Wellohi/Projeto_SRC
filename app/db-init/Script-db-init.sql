@@ -399,6 +399,12 @@ ALTER TABLE `evento`
   MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o evento.', AUTO_INCREMENT=30;
 
 --
+-- AUTO_INCREMENT de tabela `evento`
+--
+ALTER TABLE `conselheiro`
+  MODIFY `id_conselheiro` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Campo, chave primaria, para identificar o evento.';
+
+--
 -- AUTO_INCREMENT de tabela `gestor`
 --
 ALTER TABLE `gestor`
