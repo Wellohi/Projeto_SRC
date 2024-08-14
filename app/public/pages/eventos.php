@@ -7,14 +7,14 @@
 
 <div class="btnadd">
     <button id="openModal7" style="position: relative;
-    margin: 0px 0px 0px 87%; max-width: 14em !important;" class="btn success">Adicionar evento</button>
+    margin: 0px 0px 0px 86%;" class="btn-adicionar br-button primary mr-3">Adicionar evento</button>
 </div>
 
 <div class="container-table">
     <div style="width: 100%; " class="tableOverflow">
         <table id="eventosTable" style="width: 100%;">
             <thead>
-                <tr>
+                <tr class="cabecalho-tabela">
                     <th class="hideColumn">ID</th>
                     <th>Nome Do Evento</th>
                     <th>Tipo Do Evento</th>
@@ -118,8 +118,8 @@
                         </select>
                     </div>
                     <div class="modal-buttons">
-                        <button type="submit" id="adicionarCard" class="btn success btn-primary">Adicionar</button>
-                        <button type="reset" id="closeModal7" class="btn danger btn-secondary">Fechar</button>
+                        <button type="submit" id="adicionarCard" class="br-button primary mr-3">Adicionar</button>
+                        <button type="reset" id="closeModal7" class="br-button secondary mr-3">Fechar</button>
                     </div>
                 </form>
             </div>

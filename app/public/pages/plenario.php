@@ -3,8 +3,8 @@
     <input type="text" id="campoDeBuscaPlenario" onkeyup="buscarNoCampoPlenario()" placeholder="Digite o Nome Do Plenario...">
 </div> -->
 
-<button class="btn success" id="openModal11" style="position: relative;
-    margin: 0px 0px 0px 86%; max-width: 14em !important;">Cadastrar plenaria</button>
+<button class="btn-adicionar br-button primary mr-3" id="openModal11" style="position: relative;
+    margin: 0px 0px 0px 86%;">Cadastrar plenaria</button>
 
 
 
@@ -31,8 +31,8 @@
 <div class="container-table">
     <div style="width: 100%; overflow-y: overlay;">
         <table id="plenariosTable" style="width: 100%;">
-            <tr>
-            <th class="hideColumn">ID</th>
+            <tr class="cabecalho-tabela">
+                <th class="hideColumn">ID</th>
                 <th>Nome Do Plenário</th>
                 <th>Data</th>
                 <th>Vagas</th>
@@ -116,7 +116,7 @@ $resultados = consultarTabela($pdo, "tipo_evento"); ?>
                 <?php } ?>
             </select>
             <span>Condicionate</span>
-            <select name="nm_condicionante" id="condicionanteDoEventoPlenario" class="inputPlenario" >
+            <select name="nm_condicionante" id="condicionanteDoEventoPlenario" class="inputPlenario">
                 <option value="" data-default disabled selected>Selecione</option>
                 <?php foreach ($resultadoConsultaCondicionantes as $resultadoConsultaCondicionante) { ?>
                     <option value="<?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?>"><?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?></option>
@@ -124,8 +124,10 @@ $resultados = consultarTabela($pdo, "tipo_evento"); ?>
             </select>
             <span>Local:</span>
             <input type="text" class="inputPlenario" id="inputLocalPlenario" name="sg_estado_uf" maxlength="2" size="2">
-            <button type="submit" id="openModal11" style="margin-top: 10px !important; margin-bottom: -40px !important; margin-left: 10px !important;" class="btn btn-primary ">Adicionar</button>
-            <button type="reset" id="closeModal11" style="margin: 0px 0px 0px 82% !important;" class="btn btn-secondary modalbtn">Fechar</button>
+            <div class="modal-buttons">
+                <button type="submit" id="openModal11" class="br-button primary mr-3 ">Adicionar</button>
+                <button type="reset" id="closeModal11" class="br-button secondary mr-3">Fechar</button>
+            </div>
         </div>
     </form>
 </dialog>
