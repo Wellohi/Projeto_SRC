@@ -82,9 +82,10 @@
 <dialog id="modal9" class="modal" style="min-height: 310px;">
     <div class="modal-content">
         <!-- <h2>Adicionar Tipo Evento</h2> -->
-        <form>
-            <input type="text" class="inputOpcoes" placeholder="ADICIONAR TIPO DO EVENTO">
-            <button type="submit" class="btn btn-primary modalbtn">Adicionar</button>
+        <form method="post" action="../backend/adicionarTipoEvento.php">
+            <input type="text" class="inputOpcoes" name="adicionarTipoEvento" id="adicionarTipoEvento" placeholder="ADICIONAR TIPO DO EVENTO">
+            <input placeholder="PONTUAÇÃO" type="number" class="inputOpcoes" name="vl_pontuacao_conselheiro" id="pontuacao">
+            <button type="submit" id="openModal9" class="btn btn-primary modalbtn">Adicionar</button>
             <button type="reset" id="closeModal9" class="btn btn-secondary modalbtn">Fechar</button>
         </form>
     </div>
@@ -93,10 +94,10 @@
     <div class="modal-content">
         <!-- <h2>Adicionar Condicionante</h2> -->
         <form method="post" action="../backend/condicionante.php">
-            <h4>Nome da Condicionante</h4>
+            <!-- <h4>Nome da Condicionante</h4> -->
             <input placeholder="NOME" type="text" class="inputOpcoes" name="adicionarCondicionante" id="adicionarCondicionante">
-            <h4>Pontuação da Condicionante</h4>
-            <input placeholder="PONTUAÇÃO" type="number" class="inputOpcoes" name="vl_pontuacao_conselheiro" id="pontuacao">
+            <!-- <h4>Pontuação da Condicionante</h4> -->
+            <!-- <input placeholder="PONTUAÇÃO" type="number" class="inputOpcoes" name="vl_pontuacao_conselheiro" id="pontuacao"> -->
             <button type="submit" id="openModal3" class="btn btn-primary modalbtn">Adicionar</button>
             <button type="reset" id="closeModal3" class="btn btn-secondary modalbtn">Fechar</button>
         </form>
