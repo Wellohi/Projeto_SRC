@@ -27,6 +27,12 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
   <title>SRC-Eventos</title>
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- components do gov.br -->
+  <link rel="stylesheet" href="https://docs-ds.estaleiro.serpro.gov.br/docs/ds/dist/core.min.css">
+  <link rel="stylesheet" href="https://cdngovbr-ds.estaleiro.serpro.gov.br/design-system/fonts/rawline/css/rawline.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
