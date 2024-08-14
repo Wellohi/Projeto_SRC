@@ -5,20 +5,19 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Botão para adicionar conselheiro -->
-<div class="btnadd btnadd-head">
-    <button id="openModal1" class="btn success" style="max-width: 14em;">Adicionar conselheiro</button>
+<div class="btnadd-head">
+    <div class="box">
+        <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+        <input type="text" name="" class="box-pesquisa" placeholder="Pesquisar" id="campo-pesquisa">
+   
+
+    <!-- Botão para adicionar conselheiro -->
+
+    <button id="openModal1" class="btn-adicionar">Adicionar conselheiro</button>
+
+    <button id="openModal5" class="btn-restaurar">Conselheiros desativados</button> 
+
 </div>
-
-<button id="openModal5" class="restaurar" style="width: 14em;">Conselheiros desativados</button>
-
-
-<div class="box">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="box-lupa" style="margin-left :8px">
-        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
-    </svg>
-    <input type="text" name="" class="box-pesquisa" placeholder="Pesquisar" id="campo-pesquisa">
-
 </div>
 
 
@@ -32,13 +31,11 @@
                 <tr class="head-tab">
                     <td style="
                     background: #124D81;
-                    color: white;"
-                    >Nome do Conselheiro</td>
-                    <td 
-                    style="
+                    color: white;">Nome do Conselheiro</td>
+                    <td
+                        style="
                     background: #124D81;
-                    color: white;"
-                    >Restaurar Conselheiro</td>
+                    color: white;">Restaurar Conselheiro</td>
                 </tr>
             </thead>
             <tbody>
@@ -92,14 +89,14 @@
     <div style=" width: 65%;" class="tableOverflow">
         <table id="tabela-cadastro" style="width: 100%;">
             <thead>
-                <tr class="">
+                <tr>
                     <th>Nome do Conselheiro</th>
-                    <th style= "width:15px">Acessar Conselheiro</th>
-                    <th style= "width:15px">Desativar Conselheiro</td>
+                    <th style="width:15px">Acessar Conselheiro</th>
+                    <th style="width:15px">Desativar Conselheiro</td>
                 </tr>
             </thead>
             <tbody>
-            <?php
+                <?php
                 // Preparando a consulta
                 $stmt = $pdo->prepare("SELECT id_conselheiro, nm_conselheiro, vl_pontuacao_conselheiro FROM conselheiro WHERE excluir = 0 ORDER BY nm_conselheiro");
 
@@ -166,7 +163,7 @@ foreach ($resultados as $resultado) {
             <p>Deseja reativar o conselheiro abaixo?</p>
             <h2 id="ativarConselheiro"></h2>
             <br>
-            <button type="submit" class="btn btn-primary" >Reativar</button>
+            <button type="submit" class="btn btn-primary">Reativar</button>
             <button type="button" id="closeModal10" class="btn btn-secondary float-right">Cancelar</button>
         </form>
     </div>
@@ -231,17 +228,17 @@ foreach ($resultados as $resultado) {
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona todos os modais
-    const modals = document.querySelectorAll('dialog[id^="modal-acessar-"]');
+        // Seleciona todos os modais
+        const modals = document.querySelectorAll('dialog[id^="modal-acessar-"]');
 
-    // Itera sobre cada modal para adicionar o evento de fechar
-    modals.forEach(modal => {
-        // Seleciona o botão de fechar dentro do modal atual
-        const closeButton = modal.querySelector('button[id^="closeModal-"]');
+        // Itera sobre cada modal para adicionar o evento de fechar
+        modals.forEach(modal => {
+            // Seleciona o botão de fechar dentro do modal atual
+            const closeButton = modal.querySelector('button[id^="closeModal-"]');
 
-        // Adiciona o evento de clique ao botão de fechar
-        closeButton.addEventListener('click', function() {
-            modal.close();
+            // Adiciona o evento de clique ao botão de fechar
+            closeButton.addEventListener('click', function() {
+                modal.close();
             });
         });
     });

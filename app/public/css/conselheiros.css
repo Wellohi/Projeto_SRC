@@ -1,59 +1,70 @@
 /* Estilo dos botões */
-.btnadd-head {
-    position: absolute;
-    margin: 10px 0 0 18.5%;
-}
 
 .btn-primary, .btn-secondary{
     margin-top: 10%;
 }
 
-.restaurar {
+.btnadd-head {
+    width: 100%;
+}
+
+.btn-adicionar {
     position: relative;
-    margin: 10px 0 0 45%;
-    left: 0;
+    margin: 0 1rem 0 12vw;
     right: 0;
-    width: 9em;
+    width: 14em;
     border: #124D81;
-    height: 3.2em;
-    /* border-radius: 8px; */
+    height: 4.2em;
     color: white;
-    padding: 0px !important;
     cursor: pointer;
     background-color: #124D81;
     text-align: center;
+    font-size: 11px;
 }
 
-.restaurar:hover{
+.btn-restaurar {
+    position: relative;
+    right: 0;
+    width: 14em;
+    border: #124D81;
+    height: 4.2em;
+    color: white;
+    cursor: pointer;
+    background-color: #124D81;
+    text-align: center;
+    font-size: 11px;
+}
+
+.btn-adicionar:hover{
     color: white;
     cursor: pointer;
     background: #0a6dca;
 }
 
+.btn-restaurar:hover{
+    color: white;
+    cursor: pointer;
+    background: #0a6dca;
+}
+
+.box {
+    margin: 0 0 0 15vw;
+}
+
 .box-pesquisa {
-    margin-top: 5px;
-    width: 10em;
+    margin: 1rem 0 0 0;
+    width: 14em;
     border: none;
     border-bottom: 1px solid black;
     height: 2.5em;
-    /* border-radius: 5px; */
     text-align: center;
     color: #666666;
-    /* background-color: #DDF7FF; */
 }
 
 .box-lupa {
     width: 20px;
     position: absolute;
-    margin: 12px 0 0 -25px;
-}
-
-.box {
-    width: 0em;
-    height: 2em;
-    float: right;
-    border-radius: 5px;
-    margin: 10px 30% 0 0;
+    margin: 12px 0 0 0;
 }
 
 /* Estilo da coluna "desativar" */
