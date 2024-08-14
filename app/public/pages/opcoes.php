@@ -11,7 +11,7 @@
                 <i class="fa-solid fa-user-plus"></i>
             </div>
             <div class="cardfooter">
-                <button id="openModal12" class="btn success">Editar</button>
+                <button id="openModal12" class="br-button primary mr-3">Editar</button>
             </div>
         </div>
 
@@ -25,7 +25,7 @@
                 <i class="fa-solid fa-people-group"></i>
             </div>
             <div class="cardfooter">
-                <button id="openModal9" class="btn success">Adicionar</button>
+                <button id="openModal9" class="br-button primary mr-3">Adicionar</button>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                 <i class="fa-solid fa-calendar-plus"></i>
             </div>
             <div class="cardfooter">
-                <button id="openModal3" class="btn success">Adicionar</button>
+                <button id="openModal3" class="br-button primary mr-3">Adicionar</button>
             </div>
         </div>
     </div>
@@ -47,9 +47,9 @@
 
 <dialog id="modal12" class="modal">
     <div class="modal-content">
-    <button id="openModal13" style="align-items: center;" class="btn btn-primary modalbtn">Adicionar Gestor</button>
-    <button id="openModal12" style="align-items: center;" class="btn btn-primary modalbtn">Remover Gestor</button>
-    <button id="closeModal12" class="btn btn-secondary modalbtn">Fechar</button>
+    <button id="openModal13" style="align-items: center;" class="br-button primary mr-3">Adicionar Gestor</button>
+    <button id="openModal12" style="align-items: center;" class="br-button secondary mr-3">Remover Gestor</button>
+    <button id="closeModal12" class="br-button secondary mr-3">Fechar</button>
     </div>
 </dialog>
 <dialog id="modal13" class="modal">
@@ -62,8 +62,8 @@
             <br>
             <input type="password" name="bn_senha_gestor" id="senha" style="width: 100% !important;" placeholder="INSIRA UMA SENHA PARA O GESTOR" required>
             <br>
-            <button type="submit" class="btn btn-primary float-left">Adicionar</button>
-            <button type="reset" id="closeModal13" class="btn btn-secondary float-right">Fechar</button>
+            <button type="submit" class="br-button primary mr-3">Adicionar</button>
+            <button type="reset" id="closeModal13" class="br-button secondary mr-3">Fechar</button>
         </form>
     </div>
 </dialog>
@@ -74,8 +74,8 @@
         <h2>Remover Gestor</h2>
         <form>
             <input type="text">
-            <button type="submit" class="modalbtn">Adicionar</button>
-            <button type="reset" id="closeModal13" class="modalbtn">Fechar</button>
+            <button type="submit" class="br-button primary mr-3">Adicionar</button>
+            <button type="reset" id="closeModal13" class="br-button secondary mr-3">Fechar</button>
         </form>
     </div>
 </dialog>
@@ -85,8 +85,8 @@
         <form method="post" action="../backend/adicionarTipoEvento.php">
             <input type="text" class="inputOpcoes" name="adicionarTipoEvento" id="adicionarTipoEvento" placeholder="ADICIONAR TIPO DO EVENTO">
             <input placeholder="PONTUAÇÃO" type="number" class="inputOpcoes" name="vl_pontuacao_conselheiro" id="pontuacao">
-            <button type="submit" id="openModal9" class="btn btn-primary modalbtn">Adicionar</button>
-            <button type="reset" id="closeModal9" class="btn btn-secondary modalbtn">Fechar</button>
+            <button type="submit" id="openModal9" class="br-button primary mr-3">Adicionar</button>
+            <button type="reset" id="closeModal9" class="br-button secondary mr-3">Fechar</button>
         </form>
     </div>
 </dialog>
@@ -98,8 +98,8 @@
             <input placeholder="NOME" type="text" class="inputOpcoes" name="adicionarCondicionante" id="adicionarCondicionante">
             <!-- <h4>Pontuação da Condicionante</h4> -->
             <!-- <input placeholder="PONTUAÇÃO" type="number" class="inputOpcoes" name="vl_pontuacao_conselheiro" id="pontuacao"> -->
-            <button type="submit" id="openModal3" class="btn btn-primary modalbtn">Adicionar</button>
-            <button type="reset" id="closeModal3" class="btn btn-secondary modalbtn">Fechar</button>
+            <button type="submit" id="openModal3" class="br-button primary mr-3">Adicionar</button>
+            <button type="reset" id="closeModal3" class="br-button secondary mr-3">Fechar</button>
         </form>
     </div>
 </dialog>

@@ -7,7 +7,7 @@
 
 <div class="btnadd">
     <button id="openModal7" style="position: relative;
-    margin: 0px 0px 0px 87%; max-width: 14em !important;" class="btn success">Adicionar evento</button>
+    margin: 0px 0px 0px 86%;" class="btn-adicionar br-button primary mr-3">Adicionar evento</button>
 </div>
 
 <div class="container-table">
@@ -68,7 +68,7 @@
                 <!-- <h2>Deseja Adicionar um Evento ?</h2> -->
                 <form id="formularioAdicionarEvento" method="post" action="../backend/cardEvento.php">
                     <div class="row">
-           white !important;!important;       <span>Nome do Evento:</span>
+                        <span>Nome do Evento:</span>
                         <br>
                         <input id="inputNomeDoEvento" class="inputEvento" value="" name="nm_evento" type="text" placeholder="Nome do Evento">
                     </div>
@@ -118,8 +118,8 @@
                         </select>
                     </div>
                     <div class="modal-buttons">
-                        <button type="submit" id="adicionarCard" class="btn success btn-primary">Adicionar</button>
-                        <button type="reset" id="closeModal7" class="btn danger btn-secondary">Fechar</button>
+                        <button type="submit" id="adicionarCard" class="br-button primary mr-3">Adicionar</button>
+                        <button type="reset" id="closeModal7" class="br-button secondary mr-3">Fechar</button>
                     </div>
                 </form>
             </div>

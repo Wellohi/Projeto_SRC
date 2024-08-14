@@ -7,8 +7,8 @@
     <input type="text" id="campoDeBuscaPlenario" onkeyup="buscarNoCampoPlenario()" placeholder="Digite o Nome Do Conselheiro...">
 </div> -->
 
-<div class="group-buttons" style="padding-right: 360px !important">
-  <button class="btn btn-ranking" onclick="generateReport()">Gerar Relatório</button>
+<div class="group-buttons" >
+  <button class="btn-adicionar br-button primary mr-3" onclick="generateReport()">Gerar Relatório</button>
 </div>
 
 <br>

@@ -13,9 +13,9 @@
 
     <!-- Botão para adicionar conselheiro -->
 
-    <button id="openModal1" class="btn-adicionar">Adicionar conselheiro</button>
+    <button id="openModal1" class="btn-adicionar br-button primary mr-3">Adicionar conselheiro</button>
 
-    <button id="openModal5" class="btn-restaurar">Conselheiros desativados</button> 
+    <button id="openModal5" class="btn-restaurar br-button secondary mr-3">Conselheiros desativados</button> 
 
 </div>
 </div>
@@ -54,7 +54,7 @@
                     echo "<tr>";
                     echo "<td>" . $resultado['nm_conselheiro'] . "</td>";
                     echo "<td class='campoativar'>";
-                    echo "<button id='openModal10' class='btn btn-primary btnadd btn-ativar' style='align-items: center; margin: 0px 0px 0px 16% !important;' 
+                    echo "<button id='openModal10' class=' br-button primary mr-3' style='align-items: center; margin: 0px 0px 0px 16% !important;' 
                     data-id='" . $resultado['id_conselheiro'] . "'
                     data-nome='" . $resultado['nm_conselheiro'] . "' 
                     style='display: flex; margin: 0 27%; justify-content: center;'>Reativar</button>";
@@ -65,7 +65,7 @@
                 ?>
             </tbody>
         </table>
-        <button type="button" class="btn btn-secondary" style="margin: 4px 0px 0px 74% !important;" id="closeModal5">Fechar</button>
+        <button type="button" class=" br-button secondary mr-3" id="closeModal5">Fechar</button>
     </div>
 </dialog>
 
@@ -77,8 +77,8 @@
             <!-- <p>Deseja adicionar um novo conselheiro?</p> -->
             <input type="text" name="adicionarConselheiro" id="adicionarConselheiro" autocomplete="off" placeholder="NOME DO CONSELHEIRO">
             <br>
-            <button type="submit" class="btn btn-primary float-left">Adicionar</button>
-            <button type="reset" id="closeModal1" class="btn btn-secondary float-right">Fechar</button>
+            <button type="submit" class="br-button primary mr-3 float-left">Adicionar</button>
+            <button type="reset" id="closeModal1" class="br-button secondary mr-3 float-right">Fechar</button>
         </form>
     </div>
 </dialog>

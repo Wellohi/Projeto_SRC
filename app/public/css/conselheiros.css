@@ -9,42 +9,16 @@
 }
 
 .btn-adicionar {
-    position: relative;
     margin: 0 1rem 0 12vw;
-    right: 0;
     width: 14em;
-    border: #124D81;
     height: 4.2em;
-    color: white;
-    cursor: pointer;
-    background-color: #124D81;
-    text-align: center;
     font-size: 11px;
 }
 
 .btn-restaurar {
-    position: relative;
-    right: 0;
     width: 14em;
-    border: #124D81;
     height: 4.2em;
-    color: white;
-    cursor: pointer;
-    background-color: #124D81;
-    text-align: center;
     font-size: 11px;
-}
-
-.btn-adicionar:hover{
-    color: white;
-    cursor: pointer;
-    background: #0a6dca;
-}
-
-.btn-restaurar:hover{
-    color: white;
-    cursor: pointer;
-    background: #0a6dca;
 }
 
 .box {
@@ -119,7 +93,7 @@
 
 .btn-acessar {
     color: white;
-    background-color: #124D81;
+    background-color: #1351b4;
     padding: 0.4rem 0.6rem;
     margin: 0 auto;
     border-radius: 100%;
@@ -144,7 +118,7 @@
 .group-buttons{
     display: flex;
     justify-content: center;
-    margin: 10px 10px -16px 10px;
+    margin: 0 0 0 10vw;
 }
 
 .btn-ranking{position: relative;margin-left: 84%;float: right;max-width: 14em !important;background-color: #124D81;}
