@@ -60,6 +60,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-align: center;
 }
 
 .dropdown {
@@ -94,7 +95,8 @@
 }
 
 .btn.info.icon, .btn.danger.icon{
-    padding: 0.5rem 0.7rem;
+    padding: 0.7rem 0.7rem;
+    border-radius: 100%;
     margin: 0 auto;
 }
 

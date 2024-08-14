@@ -31,7 +31,7 @@
 <div class="container-table">
     <div style="width: 100%; overflow-y: overlay;">
         <table id="plenariosTable" style="width: 100%;">
-            <tr>
+            <tr class="cabecalho-tabela">
             <th class="hideColumn">ID</th>
                 <th>Nome Do Plenário</th>
                 <th>Data</th>

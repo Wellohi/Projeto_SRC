@@ -231,33 +231,41 @@ table {
   
 }
 
-
+td.cabecalho-tabela ,
+th.cabecalho-tabela {
+  text-align: center;
+}
 
 td,
 th {
-  border: 1px solid #F4F4F4;
+  border: 0px;
   padding: 3px;
   font-weight: 400;
   text-align: center;
   max-width: 20vh;
-  border-bottom: rgb(177, 177, 177) 2px solid;
-  border-left: rgb(177, 177, 177)  2px solid;
-  border-right: rgb(177, 177, 177)  2px solid;
+  text-align: center ;
 }
 
-th, thead{
+tr{
+  background:white; 
+}
+
+
+
+
+/* th, thead{
   background: #124D81;
   color: white;
-}
+} */
 
-tr:nth-child(even) {
-  background-color: #FFFFFF; /* Cor de fundo para linhas pares */
-  /* --bg-button-secondary: #0E3E67; */
+/* Cor de fundo para linhas pares(even) e linhas ímpares(odd) */
+/* tr:nth-child(even) {
+  background-color: #FFFFFF; 
 }
 
 tr:nth-child(odd) td {
-  background-color: #ebeaea; /* Cor de fundo para linhas ímpares */
-}
+  background-color: #ebeaea; 
+} */
 
 .container-table-fila-de-espera{
   display: flex;

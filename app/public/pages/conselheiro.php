@@ -89,10 +89,10 @@
     <div style=" width: 65%;" class="tableOverflow">
         <table id="tabela-cadastro" style="width: 100%;">
             <thead>
-                <tr>
+                <tr class="cabecalho-tabela">
                     <th>Nome do Conselheiro</th>
-                    <th style="width:15px">Acessar Conselheiro</th>
-                    <th style="width:15px">Desativar Conselheiro</td>
+                    <th>Acessar Conselheiro</th>
+                    <th>Desativar Conselheiro</td>
                 </tr>
             </thead>
             <tbody>

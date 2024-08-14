@@ -14,7 +14,7 @@
     <div style="width: 100%; " class="tableOverflow">
         <table id="eventosTable" style="width: 100%;">
             <thead>
-                <tr>
+                <tr class="cabecalho-tabela">
                     <th class="hideColumn">ID</th>
                     <th>Nome Do Evento</th>
                     <th>Tipo Do Evento</th>
@@ -68,7 +68,7 @@
                 <!-- <h2>Deseja Adicionar um Evento ?</h2> -->
                 <form id="formularioAdicionarEvento" method="post" action="../backend/cardEvento.php">
                     <div class="row">
-                        <span>Nome do Evento:</span>
+           white !important;!important;       <span>Nome do Evento:</span>
                         <br>
                         <input id="inputNomeDoEvento" class="inputEvento" value="" name="nm_evento" type="text" placeholder="Nome do Evento">
                     </div>

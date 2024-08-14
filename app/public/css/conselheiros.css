@@ -67,6 +67,14 @@
     margin: 12px 0 0 0;
 }
 
+.cabecalho-tabela th{
+    color: white;
+    background: #124D81;
+    text-align: center;
+}
+
+
+
 /* Estilo da coluna "desativar" */
 /* .campodesativar {
     width: 10%;
@@ -112,9 +120,9 @@
 .btn-acessar {
     color: white;
     background-color: #124D81;
-    padding: 0.4rem 0.7rem;
-    margin: 0 auto; 
-    /* border-radius: 5px; */
+    padding: 0.4rem 0.6rem;
+    margin: 0 auto;
+    border-radius: 100%;
     border: 1px solid #c7c7c7;
 }
 
@@ -124,11 +132,10 @@
 }
 
 .btn-desativarconselheiro {
-    padding: 0.4rem 0.7rem;
-    margin: 0 auto; 
-    cursor: pointer ;
-    /* border-radius: 5px; */
-    /* border-color: #000000; */
+    padding: 0.4rem 0.8rem;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 100%;
 }
 /* .btn-desativarconselheiro i{
  color: #1764A8;
