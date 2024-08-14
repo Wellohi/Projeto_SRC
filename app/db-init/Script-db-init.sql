@@ -57,61 +57,61 @@ CREATE TABLE `conselheiro` (
 -- Extraindo dados da tabela `conselheiro`
 --
 
-INSERT INTO `conselheiro` (`id_conselheiro`, `nm_conselheiro`, `vl_pontuacao_conselheiro`, `excluir`) VALUES
-(17, 'Carlos Henrique do Nascimento', 0, 1),
-(18, 'Andrezza Carolina Brito Farias', 0, 1),
-(19, 'Wellington do Carmo Cruz', 0, 0),
-(20, 'Luana Aguiar Pinheiro Soares', 0, 0),
-(21, 'Haroldo Santos Filho', 0, 0),
-(22, 'Rangel Francisco Pinto', 0, 0),
-(23, 'Heraldo de Jesus Campelo', 0, 0),
-(24, 'Gercimira Ramos Moreira Rezende', 0, 0),
-(25, 'Brunno Sitônio Fialho de Oliveira', 999999, 0),
-(26, 'Joaquim de Alencar Bezerra Filho', 0, 0),
-(27, 'Aguinaldo Mocelin', 101010, 0),
-(28, 'Maria do Rosario de Oliveira', 0, 0),
-(29, 'José Domingos Filho', 0, 0),
-(30, 'Ana Tércia Lopes Rodrigues', 0, 0),
-(31, 'Sergio Faraco', 0, 0),
-(32, 'Aécio Prado Dantas Júnior', 123123, 0),
-(33, 'José Donizete Valentina', 0, 0),
-(34, 'Sebastião Célio Costa Castro', 0, 0),
-(35, 'Mateus Nascimento Calegari', 0, 0),
-(36, 'Manoel Carlos de Oliveira Júnior', 0, 0),
-(38, 'Sandra Maria de Carvalho Campos', 0, 0),
-(39, 'Carlos Rubens de Oliveira', 0, 0),
-(40, 'Ticiane Lima dos Santos', 0, 0),
-(41, 'José Gonçalves Campos Filho', 0, 0),
-(42, 'Vitória Maria da Silva', 0, 0),
-(43, 'Palmira Leão de Souza', 0, 0),
-(44, 'José Alberto Viana Gaia', 0, 0),
-(45, 'Fabiano Ribeiro Pimentel', 0, 0),
-(46, 'Sônia Maria da Silva Gomes', 0, 0),
-(47, 'Liliana Farias Lacerda', 0, 0),
-(48, 'Roberto Schulze', 0, 0),
-(49, 'Weberth Fernandes', 0, 0),
-(50, 'Nilton Luiz Lima Praseres', 0, 0),
-(51, 'Aloísio Rodrigues da Silva', 3, 0),
-(52, 'Glaydson Trajano Farias', 0, 0),
-(53, 'Elias Dib Caddah Neto', 0, 0),
-(54, 'Maurício Gilberto Cândido', 0, 0),
-(55, 'Erivan Ferreira Borges', 0, 0),
-(56, 'Edneu da Silva Calderari', 0, 0),
-(57, 'Mônica Foerster', 0, 0),
-(58, 'Marlise Alves Silva Teixeira', 0, 0),
-(59, 'Angela Andrade Dantas Mendonça', 0, 0),
-(60, 'Valmir Leôncio da Silva', 0, 0),
-(61, 'Norton Thomazi', 0, 0),
-(62, 'Cil Farney Assis Rodrigues', 0, 0),
-(63, 'Lucilene Florêncio Viana', 0, 0),
-(64, 'Leonardo Silveira do Nascimento', 0, 0),
-(65, 'Antônio de Pádua Soares Pelicarpo', 0, 0),
-(66, 'Arleon Carlos Stelini', 0, 0),
-(67, 'Antonio Carlos Sales Ferreira Junior', 0, 0),
-(68, 'Geraldo de Paula Batista Filho', 0, 0),
-(69, 'Ana Luiza Pereira Lima', 0, 0),
-(70, 'Francisco Fernandes de Oliveira', 0, 0),
-(80, 'NOCO VONLHESEIRO', 0, 0);
+INSERT INTO `conselheiro` ( `nm_conselheiro`, `vl_pontuacao_conselheiro`, `excluir`) VALUES
+('Carlos Henrique do Nascimento', 0, 1),
+('Andrezza Carolina Brito Farias', 0, 1),
+('Wellington do Carmo Cruz', 0, 0),
+('Luana Aguiar Pinheiro Soares', 0, 0),
+('Haroldo Santos Filho', 0, 0),
+('Rangel Francisco Pinto', 0, 0),
+('Heraldo de Jesus Campelo', 0, 0),
+('Gercimira Ramos Moreira Rezende', 0, 0),
+('Brunno Sitônio Fialho de Oliveira', 999999, 0),
+('Joaquim de Alencar Bezerra Filho', 0, 0),
+('Aguinaldo Mocelin', 101010, 0),
+('Maria do Rosario de Oliveira', 0, 0),
+('José Domingos Filho', 0, 0),
+('Ana Tércia Lopes Rodrigues', 0, 0),
+('Sergio Faraco', 0, 0),
+('Aécio Prado Dantas Júnior', 123123, 0),
+('José Donizete Valentina', 0, 0),
+('Sebastião Célio Costa Castro', 0, 0),
+('Mateus Nascimento Calegari', 0, 0),
+('Manoel Carlos de Oliveira Júnior', 0, 0),
+('Sandra Maria de Carvalho Campos', 0, 0),
+('Carlos Rubens de Oliveira', 0, 0),
+('Ticiane Lima dos Santos', 0, 0),
+('José Gonçalves Campos Filho', 0, 0),
+('Vitória Maria da Silva', 0, 0),
+('Palmira Leão de Souza', 0, 0),
+('José Alberto Viana Gaia', 0, 0),
+('Fabiano Ribeiro Pimentel', 0, 0),
+('Sônia Maria da Silva Gomes', 0, 0),
+('Liliana Farias Lacerda', 0, 0),
+('Roberto Schulze', 0, 0),
+('Weberth Fernandes', 0, 0),
+('Nilton Luiz Lima Praseres', 0, 0),
+('Aloísio Rodrigues da Silva', 3, 0),
+('Glaydson Trajano Farias', 0, 0),
+('Elias Dib Caddah Neto', 0, 0),
+('Maurício Gilberto Cândido', 0, 0),
+('Erivan Ferreira Borges', 0, 0),
+('Edneu da Silva Calderari', 0, 0),
+('Mônica Foerster', 0, 0),
+('Marlise Alves Silva Teixeira', 0, 0),
+('Angela Andrade Dantas Mendonça', 0, 0),
+('Valmir Leôncio da Silva', 0, 0),
+('Norton Thomazi', 0, 0),
+('Cil Farney Assis Rodrigues', 0, 0),
+('Lucilene Florêncio Viana', 0, 0),
+('Leonardo Silveira do Nascimento', 0, 0),
+('Antônio de Pádua Soares Pelicarpo', 0, 0),
+('Arleon Carlos Stelini', 0, 0),
+('Antonio Carlos Sales Ferreira Junior', 0, 0),
+('Geraldo de Paula Batista Filho', 0, 0),
+('Ana Luiza Pereira Lima', 0, 0),
+('Francisco Fernandes de Oliveira', 0, 0),
+('NOCO VONLHESEIRO', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -132,11 +132,11 @@ CREATE TABLE `evento` (
 -- Extraindo dados da tabela `evento`
 --
 
-INSERT INTO `evento` (`id_evento`, `nm_evento`, `tp_evento`, `nm_condicionante`, `dt_evento`, `vl_pontuacao_conselheiro`) VALUES
-(3, 'teste', 'Reunião do Conselho Diretor do CFC', 'CONDITC', '2024-05-28', 0),
-(25, 'TESTETESTETESTE', 'Reunião Plenária - CRC', 'CONDIÇÔES CONDICIONANTES', '2121-12-12', 0),
-(28, 'Adicionando evento', 'Reunião Plenária - CRC', 'CONDIÇÔES CONDICIONANTES', '2024-07-08', 0),
-(29, 'Adicionando Outro Evento', 'Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC', 'CONDIÇÔES CONDICIONANTES', '2024-07-09', 0);
+INSERT INTO `evento` ( `nm_evento`, `tp_evento`, `nm_condicionante`, `dt_evento`, `vl_pontuacao_conselheiro`) VALUES
+('teste', 'Reunião do Conselho Diretor do CFC', 'CONDITC', '2024-05-28', 0),
+( 'TESTETESTETESTE', 'Reunião Plenária - CRC', 'CONDIÇÔES CONDICIONANTES', '2121-12-12', 0),
+( 'Adicionando evento', 'Reunião Plenária - CRC', 'CONDIÇÔES CONDICIONANTES', '2024-07-08', 0),
+( 'Adicionando Outro Evento', 'Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC', 'CONDIÇÔES CONDICIONANTES', '2024-07-09', 0);
 
 -- --------------------------------------------------------
 
@@ -184,12 +184,12 @@ CREATE TABLE `plenario` (
 -- Extraindo dados da tabela `plenario`
 --
 
-INSERT INTO `plenario` (`id_plenario`, `nm_plenario`, `dt_plenario`, `qt_vagas`, `tp_plenario`, `nm_condicionante`, `sg_estado_uf`) VALUES
-(2, 'such a lovely', '0000-00-00', 3, 'Reunião Plenária', 'CONDIÇÔES CONDICIONANTES', 'CA'),
-(4, 'teste', '2001-12-12', 10, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Br'),
-(5, 'testeteste', '5110-02-05', 2, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Ta'),
-(6, 'pena', '2111-02-21', 2, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Sã'),
-(7, 'clash ', '2000-12-12', 20, 'Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC', 'CONDIÇÔES CONDICIONANTES', 'Ri');
+INSERT INTO `plenario` ( `nm_plenario`, `dt_plenario`, `qt_vagas`, `tp_plenario`, `nm_condicionante`, `sg_estado_uf`) VALUES
+('such a lovely', '0000-00-00', 3, 'Reunião Plenária', 'CONDIÇÔES CONDICIONANTES', 'CA'),
+('teste', '2001-12-12', 10, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Br'),
+('testeteste', '5110-02-05', 2, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Ta'),
+('pena', '2111-02-21', 2, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 'CONDIÇÔES CONDICIONANTES', 'Sã'),
+('clash ', '2000-12-12', 20, 'Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC', 'CONDIÇÔES CONDICIONANTES', 'Ri');
 
 -- --------------------------------------------------------
 
@@ -207,9 +207,9 @@ CREATE TABLE `pontuacao` (
 -- Extraindo dados da tabela `pontuacao`
 --
 
-INSERT INTO `pontuacao` (`id_pontuacao`, `nm_conselheiro`, `vl_pontuacao_conselheiro`) VALUES
-(1, 'Carlos Henrique do Nascimento', 1),
-(2, 'Andrezza Carolina Brito Farias', 1);
+INSERT INTO `pontuacao` ( `nm_conselheiro`, `vl_pontuacao_conselheiro`) VALUES
+('Carlos Henrique do Nascimento', 1),
+('Andrezza Carolina Brito Farias', 1);
 
 -- --------------------------------------------------------
 
@@ -266,22 +266,22 @@ CREATE TABLE `tipo_evento` (
 -- Extraindo dados da tabela `tipo_evento`
 --
 
-INSERT INTO `tipo_evento` (`id_tipo_evento`, `nm_tipo_evento`, `vl_pontuacao_conselheiro`) VALUES
-(1, 'Reunião Plenária', 1),
-(2, 'Reunião Plenária - CRC', 1),
-(3, 'Reunião do Tribunal Superior de Ética e Disciplina', 1),
-(4, 'Reunião do Conselho Diretor do CFC', 1),
-(5, 'Reunião de Câmara do CFC, exceto da Câmara de Fiscalização, Ética e Disciplina', 1),
-(6, 'Reunião da Câmara de Fiscalização, Ética e Disciplina', 2),
-(7, 'Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC', 1),
-(8, 'Trabalho Técnico apresentado em evento do Calendário Oficial', 5),
-(9, 'Artigo publicado na RBC ou em revista técnica de Contabilidade', 5),
-(10, 'Palestrante/painelista em evento do Calendário Oficial e/ou evento de interesse da Classe Contábil', 5),
-(11, 'Moderador/debatedor em evento do Calendário Oficial e/ou evento de interesse da Classe Contábil', 2),
-(12, 'Treinamento no CFC ou nos CRCs, como instrutor', 5),
-(13, 'Participação aprovada em evento nacional', -10),
-(14, 'Participação aprovada em evento internacional', -20),
-(15, 'Representação da Presidência em evento', 2);
+INSERT INTO `tipo_evento` ( `nm_tipo_evento`, `vl_pontuacao_conselheiro`) VALUES
+('Reunião Plenária', 1),
+('Reunião Plenária - CRC', 1),
+('Reunião do Tribunal Superior de Ética e Disciplina', 1),
+('Reunião do Conselho Diretor do CFC', 1),
+('Reunião de Câmara do CFC, exceto da Câmara de Fiscalização, Ética e Disciplina', 1),
+('Reunião da Câmara de Fiscalização, Ética e Disciplina', 2),
+('Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC', 1),
+('Trabalho Técnico apresentado em evento do Calendário Oficial', 5),
+('Artigo publicado na RBC ou em revista técnica de Contabilidade', 5),
+( 'Palestrante/painelista em evento do Calendário Oficial e/ou evento de interesse da Classe Contábil', 5),
+( 'Moderador/debatedor em evento do Calendário Oficial e/ou evento de interesse da Classe Contábil', 2),
+( 'Treinamento no CFC ou nos CRCs, como instrutor', 5),
+( 'Participação aprovada em evento nacional', -10),
+( 'Participação aprovada em evento internacional', -20),
+( 'Representação da Presidência em evento', 2);
 
 -- --------------------------------------------------------
 
@@ -301,10 +301,10 @@ CREATE TABLE `usuario` (
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `tx_emai_usuario`, `bn_senha_usuario`, `nm_usuario`, `adm_usuario`) VALUES
-(2, 'teste@teste.com', 'teste', 'teste', 0),
-(3, 'admin@admin.com', 'admin', 'admin', 1),
-(4, 'denise.silva@cfc.org.br', 'admin', 'denise.silva', 1);
+INSERT INTO `usuario` ( `tx_emai_usuario`, `bn_senha_usuario`, `nm_usuario`, `adm_usuario`) VALUES
+( 'teste@teste.com', 'teste', 'teste', 0),
+( 'admin@admin.com', 'admin', 'admin', 1),
+( 'denise.silva@cfc.org.br', 'admin', 'denise.silva', 1);
 
 --
 -- Índices para tabelas despejadas
