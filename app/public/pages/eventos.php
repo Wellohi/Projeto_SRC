@@ -6,8 +6,7 @@
         </div> -->
 
 <div class="btnadd">
-    <button id="openModal7" style="position: relative;
-    margin: 0px 0px 0px 86%;" class="btn-adicionar br-button primary mr-3">Adicionar evento</button>
+    <button id="openModal7" style=" position: relative; margin: 12px 0px 0px 86%; max-width: 14em !important; font-size: 12px; color: white;" class="btn success">Adicionar evento</button>
 </div>
 
 <div class="container-table">
@@ -16,13 +15,13 @@
             <thead>
                 <tr class="cabecalho-tabela">
                     <th class="hideColumn">ID</th>
-                    <th>Nome Do Evento</th>
-                    <th>Tipo Do Evento</th>
-                    <th>Condicionante</th>
-                    <th>Data do Evento</th>
-                    <th>Pontuação</th>
-                    <th>Acessar</th>
-                    <th>Excluir</th>
+                    <th style="background: #124d81; color: white;">Nome Do Evento</th>
+                    <th style="background: #124d81; color: white;">Tipo Do Evento</th>
+                    <th style="background: #124d81; color: white;">Condicionante</th>
+                    <th style="background: #124d81; color: white;">Data do Evento</th>
+                    <th style="background: #124d81; color: white;">Pontuação</th>
+                    <th style="background: #124d81; color: white;">Acessar</th>
+                    <th style="background: #124d81; color: white;">Excluir</th>
                 </tr>
             </thead>
             <tbody>

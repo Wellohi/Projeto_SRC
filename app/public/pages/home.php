@@ -51,7 +51,7 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
     <!-- Tipo de perfil -->
     <div class="tipoperfil">
       <?php if ($adm_usuario) : ?>
-        <h1> Perfil de Administrador </h1>
+        <h3 style="color: white; margin-top: 0;"> Perfil de Administrador </h3>
         <?php else: ?>
           <h1> Perfil Gestor </h1>
 
