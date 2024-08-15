@@ -6,7 +6,7 @@
         </div> -->
 
 <div class="btnadd">
-    <button id="openModal7" style=" position: relative; margin: 12px 0px 0px 86%; max-width: 14em !important; font-size: 12px; color: white;" class="btn success">Adicionar evento</button>
+    <button id="openModal7" class="br-button primary mr-3">Adicionar evento</button>
 </div>
 
 <div class="container-table">
