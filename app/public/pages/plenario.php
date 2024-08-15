@@ -3,8 +3,7 @@
     <input type="text" id="campoDeBuscaPlenario" onkeyup="buscarNoCampoPlenario()" placeholder="Digite o Nome Do Plenario...">
 </div> -->
 
-<button class="btn-adicionar br-button primary mr-3" id="openModal11" style="position: relative;
-    margin: 0px 0px 0px 86%;">Cadastrar plenaria</button>
+<button class="btn-adicionar br-button primary mr-3" id="openModal11" style="position: relative;margin: 0 0 0 86%;">Cadastrar plenaria</button>
 
 
 
