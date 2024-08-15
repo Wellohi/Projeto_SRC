@@ -6,7 +6,8 @@
         </div> -->
 
 <div class="btnadd">
-    <button id="openModal7" class="btn-adicionar br-button primary mr-3" style="position: relative;margin: 0 0 0 86%;">Adicionar evento</button>
+    <button id="openModal7" class="btn-adicionar br-button primary mr-3"
+        style="position: relative;margin: 0 0 0 86%;">Adicionar evento</button>
 </div>
 
 <div class="container-table">
@@ -26,7 +27,8 @@
             </thead>
             <tbody class="conteudo-tabela">
                 <?php
-                $stmt = $pdo->prepare("SELECT * FROM evento ORDER BY nm_evento");
+                $stmt = $pdo->prepare("
+                    SELECT e.*, t.vl_pontuacao_conselheiro FROM evento e INNER JOIN tipo_evento t ON e.tp_evento = t.nm_tipo_evento ORDER BY e.nm_evento ");
                 $stmt->execute();
                 $resultados = $stmt->fetchAll();
 
@@ -38,7 +40,7 @@
                         echo '<td>' . $row['tp_evento'] . '</td>';
                         echo '<td>' . $row['nm_condicionante'] . '</td>';
                         echo '<td>' . $row['dt_evento'] . '</td>';
-                        echo '<td style="width: 30px">' . $row['vl_pontuacao_conselheiro'] . '</td>';
+                        echo '<td style="width: 30px">' . $row['vl_pontuacao_conselheiro'] . '</td>'; // Valor do JOIN
                         echo '<td style="width: 5rem;">';
                         echo '<button class="btn info icon" onclick="openModalEvento('
                             . $row['id_evento'] . ', \''
@@ -57,6 +59,7 @@
                     echo '<tr><td colspan="7">Não há eventos cadastrados</td></tr>';
                 }
                 ?>
+
             </tbody>
         </table>
 
@@ -69,7 +72,8 @@
                     <div class="row">
                         <span>Nome do Evento:</span>
                         <br>
-                        <input id="inputNomeDoEvento" class="inputEvento" value="" name="nm_evento" type="text" placeholder="Nome do Evento">
+                        <input id="inputNomeDoEvento" class="inputEvento" value="" name="nm_evento" type="text"
+                            placeholder="Nome do Evento">
                     </div>
                     <div class="row">
                         <span>Data do Evento:</span>
@@ -92,7 +96,8 @@
                         <select name="tp_evento" id="Tipo" style="width: 100%;" class="inputEvento">
                             <option value="" data-default disabled selected>Selecione</option>
                             <?php foreach ($resultados as $resultado) { ?>
-                                <option value="<?php echo $resultado['nm_tipo_evento']; ?>"><?php echo $resultado['nm_tipo_evento']; ?></option>
+                                <option value="<?php echo $resultado['nm_tipo_evento']; ?>">
+                                    <?php echo $resultado['nm_tipo_evento']; ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -112,7 +117,8 @@
                         <select name="nm_condicionante" id="Condicionante" class="inputEvento">
                             <option value="" data-default disabled selected>Selecione</option>
                             <?php foreach ($resultadoConsultaCondicionantes as $resultadoConsultaCondicionante) { ?>
-                                <option value="<?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?>"><?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?></option>
+                                <option value="<?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?>">
+                                    <?php echo $resultadoConsultaCondicionante['nm_condicionante']; ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -187,7 +193,7 @@
             // Obtendo os resultados
             $resultadoTabelaConselheiros = $stmt->fetchAll();
 
-                //id, pontuacao, conselheiro, data, evento 
+            //id, pontuacao, conselheiro, data, evento 
             ; ?>
             <?php foreach ($resultadoTabelaConselheiros as $resultadoTabelaConselheiro) { ?>
                 <table>
@@ -200,13 +206,14 @@
                         <td><button class="br-button secondary mr-3">Remover</button></td>
                     </tr>
                 <?php } ?>
-                </table>
-                <div class="button-groups-cardEventos" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem;">
-                    <button class="br-button primary mr-3">Adicionar Participantes</button>
-                    <button class="br-button secondary mr-3">Remover Todos</button>
-                    <button type="button" class="br-button secondary mr-3" onclick="closeModalEvento()">Sair</button>
+            </table>
+            <div class="button-groups-cardEventos"
+                style="display: flex; justify-content: center; align-items: center; gap: 0.5rem;">
+                <button class="br-button primary mr-3">Adicionar Participantes</button>
+                <button class="br-button secondary mr-3">Remover Todos</button>
+                <button type="button" class="br-button secondary mr-3" onclick="closeModalEvento()">Sair</button>
 
-                </div>
+            </div>
 </dialog>
 
 
