@@ -110,12 +110,12 @@
                 foreach ($resultados as $resultado) {
                     echo "<tr>";
                     echo "<td>" . $resultado['nm_conselheiro'] . "</td>";
-                    echo "<td class='acessarDesativar'><button class='btn-acessar' data-id='" . $resultado['id_conselheiro'] . "'><i class='fa-solid fa-check'></i></button></td>";
+                    echo "<td class='acessarDesativar'><button class='btn-acessar' data-id='" . $resultado['id_conselheiro'] . "'><i class='fa-regular fa-eye'></i></button></td>";
                     echo "<td class='campodesativar acessarDesativar'>
                     
                     <button id='openModal4' class='btn-desativarconselheiro danger btnremove' 
                             data-id='" . $resultado['id_conselheiro'] . "'
-                            data-nome='" . $resultado['nm_conselheiro'] . "'><i class='fa-solid fa-xmark'></i></button>
+                            data-nome='" . $resultado['nm_conselheiro'] . "'><i class='fa-regular fa-trash-can'></i></button>
                     <input type='hidden' class='id-conselheiro' value='" . $resultado['id_conselheiro'] . "'>
                     </td>";
                     echo "</tr>";
@@ -134,7 +134,7 @@ foreach ($resultados as $resultado) {
     echo "<h1>" . $resultado['nm_conselheiro'] . "</h1>";
 
     echo "<p>Pontuação total: " . $resultado['vl_pontuacao_conselheiro'] . "</p>";
-    echo "<button type='button' id='closeModal-" . $resultado['id_conselheiro'] . "' class='btn btn-secondary float-right'>Fechar</button>";
+    echo "<button type='button' id='closeModal-" . $resultado['id_conselheiro'] . "' class='br-button secondary mr-3'>Fechar</button>";
     echo "</div>";
     echo "</dialog>";
 }
@@ -149,8 +149,8 @@ foreach ($resultados as $resultado) {
         <form id="form-desativar" method="post" action="../backend/remove.php">
             <input type="hidden" name="conselheiro" id="conselheiro-desativar">
             <input type="hidden" name="id" id="id-conselheiro-desativar">
-            <button type="submit" class="btn btn-primary float-left">Confirmar</button>
-            <button type="button" class="btn btn-secondary float-right" id="closeModal4">Cancelar</button>
+            <button type="submit" class="br-button primary mr-3">Confirmar</button>
+            <button type="button" class="br-button secondary mr-3" id="closeModal4">Cancelar</button>
         </form>
     </div>
 </dialog>

@@ -11,8 +11,6 @@
   <button class="btn-adicionar br-button primary mr-3" onclick="generateReport()">Gerar Relatório</button>
 </div>
 
-<br>
-
 <div class="container-table">
     <div style="width: 45%;" class="tableOverflow">
         <table id="conselheirosTable" style="width: 100%;">

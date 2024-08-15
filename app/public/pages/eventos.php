@@ -166,10 +166,10 @@
                 echo "<tr>";
                 echo "<td>" . $resultado['nm_conselheiro'] . "</td>";
                 echo "<td class='conselheirosAdicionados'>";
-                echo "<button id='openModal10' class='btn btn-primary btnadd btn-ativar' style='align-items: center; min-width: 90px; margin: 0px 0px 0px 16% !important;' 
+                echo "<button id='openModal10'
                     data-id='" . $resultado['id_conselheiro'] . "'
                     data-nome='" . $resultado['nm_conselheiro'] . "' 
-                    class='removerBtn'>Remover</button>";
+                    class='br-button secondary mr-3'>Remover</button>";
                 echo "</td>";
                 echo "</tr>";
             }
@@ -198,14 +198,14 @@
                     </tr>
                     <tr>
                         <td><?= $resultadoTabelaConselheiro['nm_conselheiro'] ?></td>
-                        <td><button class="btn danger">Remover</button></td>
+                        <td><button class="br-button secondary mr-3">Remover</button></td>
                     </tr>
                 <?php } ?>
                 </table>
                 <div class="button-groups-cardEventos" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem;">
-                    <button class="btn success" style="min-width: 15em !important;">Adicionar Participantes</button>
-                    <button class="btn danger" style="min-width: 15em !important;">Remover Todos</button>
-                    <button type="button" class="btn danger" style="min-width: 10em !important;" onclick="closeModalEvento()">Sair</button>
+                    <button class="br-button primary mr-3">Adicionar Participantes</button>
+                    <button class="br-button secondary mr-3">Remover Todos</button>
+                    <button type="button" class="br-button secondary mr-3" onclick="closeModalEvento()">Sair</button>
 
                 </div>
 </dialog>
