@@ -24,7 +24,7 @@
                     <th>Excluir</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="conteudo-tabela">
                 <?php
                 $stmt = $pdo->prepare("SELECT * FROM evento ORDER BY nm_evento");
                 $stmt->execute();

@@ -42,7 +42,7 @@
                 <th>Excluir</th>
             </tr>
             </thead>
-            <tbody id="plenariosTableBody">
+            <tbody id="plenariosTableBody" class="conteudo-tabela">
                 <!-- Os dados serão inseridos aqui -->
                 <?php
                 $stmt = $pdo->prepare("SELECT * FROM plenario ORDER BY nm_plenario");

@@ -7,35 +7,38 @@
     <input type="text" id="campoDeBuscaPlenario" onkeyup="buscarNoCampoPlenario()" placeholder="Digite o Nome Do Conselheiro...">
 </div> -->
 
-<div class="group-buttons" >
+<div class="group-buttons">
   <button class="btn-adicionar br-button primary mr-3" onclick="generateReport()">Gerar Relatório</button>
 </div>
 
 <div class="container-table">
-    <div style="width: 45%;" class="tableOverflow">
-        <table id="conselheirosTable" style="width: 100%;">
-          <tr class="cabecalho-tabela">
-            <th onclick="sortTableByName()" class="classificando"> Nome do Conselheiro <i class="fa-solid fa-arrow-up-z-a"></i> </th>
-            <th onclick="sortTableByScore()" class="classificando" style="width:10rem;"> Pontuação <i class="fa-solid fa-arrow-up-wide-short"></i> </th> 
-          </tr>
-          <?php 
-          // Preparando a consulta
-          $stmt = $pdo->prepare("SELECT * FROM conselheiro");
+  <div style="width: 50%;" class="tableOverflow">
+    <table id="conselheirosTable" style="width: 100%;">
+      <tr class="cabecalho-tabela">
+        <th onclick="sortTableByName()" class="classificando"> Nome do Conselheiro <i class="fa-solid fa-arrow-up-z-a"></i> </th>
+        <th onclick="sortTableByScore()" class="classificando" style="width:12rem;"> Pontuação <i class="fa-solid fa-arrow-up-wide-short"></i> </th>
+      </tr>
 
-          // Executando a consulta
-          $stmt->execute();
+      <tbody class='conteudo-tabela'>
+        <?php
+        // Preparando a consulta
+        $stmt = $pdo->prepare("SELECT * FROM conselheiro");
 
-          // Obtendo os resultados
-          $resultados = $stmt->fetchAll();
+        // Executando a consulta
+        $stmt->execute();
 
-          foreach ($resultados as $conselheiro) {
-            echo "<tr>";
-            echo "<td><a href=\"#\" onclick=\"openModal('" . $conselheiro['nm_conselheiro'] . "', " . $conselheiro['vl_pontuacao_conselheiro'] . ")\">" . $conselheiro['nm_conselheiro'] . "</a></td>";
-            echo "<td>" . $conselheiro['vl_pontuacao_conselheiro'] . "</td>";
-            echo "</tr>";
-          } ?>
-        </table>
-    </div>
+        // Obtendo os resultados
+        $resultados = $stmt->fetchAll();
+
+        foreach ($resultados as $conselheiro) {
+          echo "<tr>";
+          echo "<td><a href=\"#\" onclick=\"openModal('" . $conselheiro['nm_conselheiro'] . "', " . $conselheiro['vl_pontuacao_conselheiro'] . ")\">" . $conselheiro['nm_conselheiro'] . "</a></td>";
+          echo "<td>" . $conselheiro['vl_pontuacao_conselheiro'] . "</td>";
+          echo "</tr>";
+        } ?>
+      </tbody>
+    </table>
+  </div>
 </div>
 <br>
 
@@ -60,8 +63,8 @@
 
   // Function to close the modal
   function closeModal() {
-  const modal = document.getElementById('modal-acessarRankingConselheiro').close();
-   // Use the modal.close() method to truly close the modal
+    const modal = document.getElementById('modal-acessarRankingConselheiro').close();
+    // Use the modal.close() method to truly close the modal
   }
 
   // Event listener for the close button
@@ -84,15 +87,15 @@
   });
 
   function openModal(nm_conselheiro, vl_pontuacao_conselheiro) {
-  const modal = document.getElementById('modal-acessarRankingConselheiro');
-  const nomeElement = modal.querySelector('#conselheiroNome');
-  const pontuacaoElement = modal.querySelector('#conselheiroPontuacao');
+    const modal = document.getElementById('modal-acessarRankingConselheiro');
+    const nomeElement = modal.querySelector('#conselheiroNome');
+    const pontuacaoElement = modal.querySelector('#conselheiroPontuacao');
 
-  nomeElement.textContent = nm_conselheiro;
-  pontuacaoElement.textContent = vl_pontuacao_conselheiro;
+    nomeElement.textContent = nm_conselheiro;
+    pontuacaoElement.textContent = vl_pontuacao_conselheiro;
 
-  modal.showModal();
-}
+    modal.showModal();
+  }
 
   function sortTableByName() {
     var table, rows, switching, i, x, y, shouldSwitch;

@@ -47,6 +47,20 @@
     text-align: center;
 }
 
+.cabecalho-tabela tr,.cabecalho-tabela th{
+    font-weight: normal;
+    padding: 8.5px;
+}
+
+
+.tabela-cadastro{
+    height: 2rem;
+}
+
+.conteudo-tabela tr td{
+    padding: 5.5px;
+}
+
 
 
 /* Estilo da coluna "desativar" */
@@ -148,11 +162,6 @@
 }
 .container-table a:hover{
     filter: brightness(1.3);
-}
-
-tr{
-    font-weight: normal !important;
-    height: 2rem;
 }
 
 #adicionarConselheiro {
