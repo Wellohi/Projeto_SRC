@@ -13,7 +13,7 @@
     <div style="width: 100%; " class="tableOverflow">
         <table id="eventosTable" style="width: 100%;">
             <thead>
-                <tr>
+                <tr class="cabecalho-tabela">
                     <th class="hideColumn">ID</th>
                     <th style="background: #124d81; color: white;">Nome Do Evento</th>
                     <th style="background: #124d81; color: white;">Tipo Do Evento</th>
@@ -117,8 +117,8 @@
                         </select>
                     </div>
                     <div class="modal-buttons">
-                        <button type="submit" id="adicionarCard" class="btn success btn-primary">Adicionar</button>
-                        <button type="reset" id="closeModal7" class="btn danger btn-secondary">Fechar</button>
+                        <button type="submit" id="adicionarCard" class="br-button primary mr-3">Adicionar</button>
+                        <button type="reset" id="closeModal7" class="br-button secondary mr-3">Fechar</button>
                     </div>
                 </form>
             </div>

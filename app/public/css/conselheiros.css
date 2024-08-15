@@ -1,60 +1,53 @@
 /* Estilo dos botões */
-.btnadd-head {
-    position: absolute;
-    margin: 10px 0 0 18.5%;
-}
 
 .btn-primary, .btn-secondary{
     margin-top: 10%;
 }
 
-.restaurar {
-    position: relative;
-    margin: 10px 0 0 45%;
-    left: 0;
-    right: 0;
-    width: 9em;
-    border: #124D81;
-    height: 3.2em;
-    /* border-radius: 8px; */
-    color: white;
-    padding: 0px !important;
-    cursor: pointer;
-    background-color: #124D81;
-    text-align: center;
+.btnadd-head {
+    width: 100%;
 }
 
-.restaurar:hover{
-    color: white;
-    cursor: pointer;
-    background: #0a6dca;
+.btn-adicionar {
+    margin: 0 1rem 0 12vw;
+    width: 14em;
+    height: 4.2em;
+    font-size: 11px;
+}
+
+.btn-restaurar {
+    width: 14em;
+    height: 4.2em;
+    font-size: 11px;
+}
+
+.box {
+    margin: 0 0 0 15vw;
 }
 
 .box-pesquisa {
-    margin-top: 5px;
-    width: 10em;
+    margin: 1rem 0 0 0;
+    width: 14em;
     border: none;
     border-bottom: 1px solid black;
     height: 2.5em;
-    /* border-radius: 5px; */
     text-align: center;
     color: #666666;
-    /* background-color: #DDF7FF; */
 }
 
 .box-lupa {
     width: 20px;
     position: absolute;
-    margin: 12px 0 0 -25px;
+    margin: 12px 0 0 0;
 }
 
-.box {
-    width: 0em;
-    height: 2em;
-    float: right;
-    border-radius: 5px;
-    margin: 10px 30% 0 0;
+.cabecalho-tabela th{
+    color: white;
+    background: #124D81;
+    text-align: center;
 }
+
+
 
 /* Estilo da coluna "desativar" */
 /* .campodesativar {
@@ -100,10 +93,10 @@
 
 .btn-acessar {
     color: white;
-    background-color: #124D81;
-    padding: 0.4rem 0.7rem;
-    margin: 0 auto; 
-    /* border-radius: 5px; */
+    background-color: #1351b4;
+    padding: 0.4rem 0.6rem;
+    margin: 0 auto;
+    border-radius: 100%;
     border: 1px solid #c7c7c7;
 }
 
@@ -113,11 +106,10 @@
 }
 
 .btn-desativarconselheiro {
-    padding: 0.4rem 0.7rem;
-    margin: 0 auto; 
-    cursor: pointer ;
-    /* border-radius: 5px; */
-    /* border-color: #000000; */
+    padding: 0.4rem 0.8rem;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 100%;
 }
 /* .btn-desativarconselheiro i{
  color: #1764A8;
@@ -126,7 +118,7 @@
 .group-buttons{
     display: flex;
     justify-content: center;
-    margin: 10px 10px -16px 10px;
+    margin: 0 0 0 10vw;
 }
 
 .btn-ranking{position: relative;margin-left: 84%;float: right;max-width: 14em !important;background-color: #124D81;}
