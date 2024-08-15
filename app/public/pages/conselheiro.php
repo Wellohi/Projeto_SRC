@@ -90,12 +90,12 @@
         <table id="tabela-cadastro" style="width: 100%;">
             <thead>
                 <tr class="cabecalho-tabela">
-                    <th>Nome do Conselheiro</th>
+                    <th style="width: 55%;">Nome do Conselheiro</th>
                     <th>Acessar Conselheiro</th>
                     <th>Desativar Conselheiro</td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="conteudo-tabela">
                 <?php
                 // Preparando a consulta
                 $stmt = $pdo->prepare("SELECT id_conselheiro, nm_conselheiro, vl_pontuacao_conselheiro FROM conselheiro WHERE excluir = 0 ORDER BY nm_conselheiro");
