@@ -153,9 +153,9 @@
     max-height: 60vh;
   }
 
-  .container-table table{
+  /* .container-table table{
     overflow-y: overlay;
-  }
+  } */
 
 .container-table a{
     text-decoration: none;
