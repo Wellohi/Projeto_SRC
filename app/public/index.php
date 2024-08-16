@@ -43,19 +43,25 @@ require_once('./backend/conexao.php');
     <main class="main">
         <form method="POST" action="/backend/login.php" class="form">
             <fieldset id="fieldset-index">
-                <div class="input-group">
-                    <label class="upperLabel" for="">Usuário </label>
-                    <input type="text" id="inputemail" class="lowerLabel" name="nm_usuario" required>
+                <div class="br-input small input-button">
+                    <label for="input-login-small">Usuário </label>
+                    <input type="text" id="input-login-small" class="lowerLabel" placeholder="Digite seu usuário" name="nm_usuario" required>
+                    <button class="br-button" type="button" aria-label="Buscar"><i class="fa-solid fa-user" aria-hidden="true"></i></button>
                 </div>
-                <div class="input-group">
-                    <label class="upperLabel" for="">Senha </label>
-                    <input type="password" name="bn_senha_usuario" id="inputsenha" class="lowerLabel" autocomplete="off" required>
+                <div class="br-input input-button">
+                    <label for="input-password">Senha </label>
+                    <input type="password" name="bn_senha_usuario" id="input-password" placeholder="Digite sua senha" class="lowerLabel" required>
+                    <button class="br-button" type="button" aria-label="Exibir senha" role="switch" aria-checked="false"><i class="fas fa-eye" aria-hidden="true"></i></button>
                 </div>
-                <div class="btn">
-                    <button type="submit">Acessar</button>
+                <div>
+                    <button style=" width: 80%; margin-left: 10%; " class="btn-adicionar br-button primary mr-3" type="submit">Acessar</button>
+                </div>
+
+                <div>
+                    <button style=" width: 80%; margin-left: 10%; " class="btn-adicionar br-button secondary mr-3" type="submit">Certificado</button>
                 </div>
                 <div style="padding-left: 10px; color: #cccccc; font-size: 13px;" >Sistema de Ranqueamento de Conselheiros</div>
-                <div class="versao">v 1.0.3</div>
+                <div class="versao">v 1.0.4</div>
             </fieldset>
         </form>
     </main>
@@ -65,5 +71,4 @@ require_once('./backend/conexao.php');
 
     <script src="./js/script.js"></script>
 </body>
-
 </html>

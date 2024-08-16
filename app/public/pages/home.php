@@ -27,8 +27,10 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
   <title>SRC-Eventos</title>
 
   <link rel="stylesheet" href="../css/home.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- components css do gov.br -->
   <link rel="stylesheet" href="https://docs-ds.estaleiro.serpro.gov.br/docs/ds/dist/core.min.css">
   <link rel="stylesheet" href="https://cdngovbr-ds.estaleiro.serpro.gov.br/design-system/fonts/rawline/css/rawline.css">
@@ -50,10 +52,10 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
 
     <!-- Tipo de perfil -->
     <div class="tipoperfil">
-      <?php if ($adm_usuario) : ?>
+      <?php if ($adm_usuario): ?>
         <h3 style="color: white; margin-top: 0;"> Perfil de Administrador </h3>
-        <?php else: ?>
-          <h1> Perfil Gestor </h1>
+      <?php else: ?>
+        <h1> Perfil Gestor </h1>
 
       <?php endif; ?>
 
@@ -88,9 +90,9 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
           <img class="bghome" src="../assets/bghome.png" alt="">
         </div>
         <div class="bemvindo">
-          <h1>SRC</h1>
+          <h1 style=" font-size: 62px; margin-left: 78px; margin-top: 18px; color: #124d81; ">SRC</h1>
           <br>
-          <h1>Bem-Vindo</h1>
+          <h1 style=" font-size: 64px; margin-left: 98px; color: #124d81; ">Bem-Vindo</h1>
         </div>
       </div>
 
@@ -101,7 +103,7 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
       </div>
 
       <!-- Page de opções -->
-      <?php if ($adm_usuario) : ?>
+      <?php if ($adm_usuario): ?>
         <div id="opcoes" class="tabcontent">
           <?php include_once('./opcoes.php'); ?>
         </div>
