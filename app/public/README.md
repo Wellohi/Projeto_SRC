@@ -96,3 +96,16 @@ GRANT ALL PRIVILEGES ON `admin\_%`.* TO `admin`@`localhost`;
     🚩 release: https://medium.com/@pogulailo/docker-best-setup-for-development-testing-and-production-for-php-5404a1950aed
 
     
+## 🔗 Rodar com Docker
+
+## Remover imagem docker:
+
+    docker-compose -f .\docker-compose.desenvolvimento.yml down -v     
+ 
+## Subir imagem docker:
+
+    docker-compose -f .\docker-compose.desenvolvimento.yml up --build -d
+
+## Iniciar imagem docker:
+
+    docker-compose -f .\docker-compose.desenvolvimento.yml logs -f

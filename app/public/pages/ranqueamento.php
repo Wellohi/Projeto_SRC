@@ -12,7 +12,7 @@
 </div>
 
 <div class="container-table">
-  <div style="width: 50%;" class="tableOverflow">
+  <div style="width: 100%;" class="tableOverflow">
     <table id="conselheirosTable" style="width: 100%;">
       <tr class="cabecalho-tabela">
         <th onclick="sortTableByName()" class="classificando"> Nome do Conselheiro <i class="fa-solid fa-arrow-up-z-a"></i> </th>

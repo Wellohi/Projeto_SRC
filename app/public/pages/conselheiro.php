@@ -7,17 +7,17 @@
 
 <div class="btnadd-head">
     <div class="box">
-        <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+        <i style="position: absolute; margin: 20px 0 0 0;" class="fa-solid fa-magnifying-glass fa-2xl"></i>
         <input type="text" name="" class="box-pesquisa" placeholder="Pesquisar" id="campo-pesquisa">
-   
 
-    <!-- Botão para adicionar conselheiro -->
 
-    <button id="openModal1" class="btn-adicionar br-button primary mr-3">Adicionar conselheiro</button>
+        <!-- Botão para adicionar conselheiro -->
+        <div class="grupo-btn">
+            <button id="openModal1" class="btn-adicionar br-button primary mr-3">Adicionar conselheiro</button>
 
-    <button id="openModal5" class="btn-restaurar br-button secondary mr-3">Conselheiros desativados</button> 
-
-</div>
+            <button id="openModal5" class="btn-restaurar br-button secondary mr-3">Conselheiros desativados</button>
+        </div>
+    </div>
 </div>
 
 
@@ -86,7 +86,7 @@
 
 
 <div class="container-table">
-    <div style=" width: 65%;" class="tableOverflow">
+    <div style=" width: 100%;" class="tableOverflow">
         <table id="tabela-cadastro" style="width: 100%;">
             <thead>
                 <tr class="cabecalho-tabela">
