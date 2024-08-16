@@ -8,8 +8,11 @@
     width: 100%;
 }
 
+.grupo-btn{
+    float: right;
+}
+
 .btn-adicionar {
-    margin: 0 1rem 0 12vw;
     width: 14em;
     height: 4.2em;
     font-size: 11px;
@@ -22,11 +25,11 @@
 }
 
 .box {
-    margin: 0 0 0 15vw;
+    margin: 0 0 0 3vw;
 }
 
 .box-pesquisa {
-    margin: 1rem 0 0 0;
+    margin: 0;
     width: 14em;
     border: none;
     border-bottom: 1px solid black;
@@ -145,7 +148,6 @@
 .container-table {
     font-size: small;
     font-weight: 1;
-    display: flex;
     justify-content: center;
     min-height: 59vh;
     max-height: 60vh;
