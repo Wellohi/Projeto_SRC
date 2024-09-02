@@ -61,7 +61,7 @@ require_once('./backend/conexao.php');
                     <button style=" width: 80%; margin-left: 10%; " class="btn-adicionar br-button secondary mr-3" type="submit">Certificado</button>
                 </div>
                 <div style="padding-left: 10px; color: #cccccc; font-size: 13px;" >Sistema de Ranqueamento de Conselheiros</div>
-                <div class="versao">v 1.0.4</div>
+                <div class="versao">v 1.0.5</div>
             </fieldset>
         </form>
     </main>
