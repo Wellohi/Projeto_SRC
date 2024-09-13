@@ -90,7 +90,6 @@ CREATE TABLE `evento` (
 
 LOCK TABLES `evento` WRITE;
 /*!40000 ALTER TABLE `evento` DISABLE KEYS */;
-INSERT INTO `evento` VALUES (1,'teste','Reunião do Conselho Diretor do CFC','CONDITC','2024-05-28',0),(2,'TESTETESTETESTE','Reunião Plenária - CRC','CONDIÇÔES CONDICIONANTES','2121-12-12',0),(3,'Adicionando evento','Reunião Plenária - CRC','CONDIÇÔES CONDICIONANTES','2024-07-08',0),(4,'Adicionando Outro Evento','Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC','CONDIÇÔES CONDICIONANTES','2024-07-09',0);
 /*!40000 ALTER TABLE `evento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -169,7 +168,6 @@ CREATE TABLE `plenario` (
 
 LOCK TABLES `plenario` WRITE;
 /*!40000 ALTER TABLE `plenario` DISABLE KEYS */;
-INSERT INTO `plenario` VALUES (1,'such a lovely','2001-12-12',3,'Reunião Plenária','CONDIÇÔES CONDICIONANTES','CA'),(2,'teste','2001-12-12',10,'Trabalho Técnico apresentado em evento do Calendário Oficial','CONDIÇÔES CONDICIONANTES','Br'),(3,'testeteste','5110-02-05',2,'Trabalho Técnico apresentado em evento do Calendário Oficial','CONDIÇÔES CONDICIONANTES','Ta'),(4,'pena','2111-02-21',2,'Trabalho Técnico apresentado em evento do Calendário Oficial','CONDIÇÔES CONDICIONANTES','Sã'),(5,'clash ','2000-12-12',20,'Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC','CONDIÇÔES CONDICIONANTES','Ri');
 /*!40000 ALTER TABLE `plenario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -294,7 +292,6 @@ CREATE TABLE `tipo_evento` (
 
 LOCK TABLES `tipo_evento` WRITE;
 /*!40000 ALTER TABLE `tipo_evento` DISABLE KEYS */;
-INSERT INTO `tipo_evento` VALUES (1,'Reunião Plenária',1),(2,'Reunião Plenária - CRC',1),(3,'Reunião do Tribunal Superior de Ética e Disciplina',1),(4,'Reunião do Conselho Diretor do CFC',1),(5,'Reunião de Câmara do CFC, exceto da Câmara de Fiscalização, Ética e Disciplina',1),(6,'Reunião da Câmara de Fiscalização, Ética e Disciplina',2),(7,'Reunião de Comissão ou Grupo de Trabalho ou Reunião de natureza técnica e/ou institucional, representando o CFC',1),(8,'Trabalho Técnico apresentado em evento do Calendário Oficial',5),(9,'Artigo publicado na RBC ou em revista técnica de Contabilidade',5),(10,'Palestrante/painelista em evento do Calendário Oficial e/ou evento de interesse da Classe Contábil',5),(11,'Moderador/debatedor em evento do Calendário Oficial e/ou evento de interesse da Classe Contábil',2),(12,'Treinamento no CFC ou nos CRCs, como instrutor',5),(13,'Participação aprovada em evento nacional',-10),(14,'Participação aprovada em evento internacional',-20),(15,'Representação da Presidência em evento',2);
 /*!40000 ALTER TABLE `tipo_evento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -321,7 +318,6 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'teste@teste.com','teste','teste',0),(2,'admin@admin.com','admin','admin',1),(3,'denise.silva@cfc.org.br','admin','denise.silva',1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 

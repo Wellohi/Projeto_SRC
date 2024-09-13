@@ -10,7 +10,7 @@ require_once('./backend/conexao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRC-Eventos</title>
+    <title>SR</title>
 
     <link rel="icon" href="./assets/favicon.ico">
     <!-- CSS LINK -->
@@ -35,7 +35,7 @@ require_once('./backend/conexao.php');
     <header class="header">
         <nav class="navbar">
         <div class="cabecalho">
-            <img class="logocfc" src="./assets/logo-cfc.svg" alt="">
+            <img class="logo"  alt="">
         </div>
         </nav>
     </header>
@@ -60,14 +60,11 @@ require_once('./backend/conexao.php');
                 <div>
                     <button style=" width: 80%; margin-left: 10%; " class="btn-adicionar br-button secondary mr-3" type="submit">Certificado</button>
                 </div>
-                <div style="padding-left: 10px; color: #cccccc; font-size: 13px;" >Sistema de Ranqueamento de Conselheiros</div>
+                <div style="padding-left: 10px; color: #cccccc; font-size: 13px;" >Sistema de Ranqueamento</div>
                 <div class="versao">v 1.0.6</div>
             </fieldset>
         </form>
     </main>
-    <!-- <footer class="footer">
-        <span>Sistema de pontuação para conselheiro do CFC - 2024</span>
-    </footer> -->
 
     <script src="./js/script.js"></script>
 </body>

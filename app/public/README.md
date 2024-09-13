@@ -1,5 +1,5 @@
-# SPC-Eventos
-Sistema de pontuação para conselheiro do CFC
+# SPC
+Sistema de pontuação
 
 
 ## Icones

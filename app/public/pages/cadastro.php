@@ -22,20 +22,20 @@
                     <option value="" data-default disabled selected>Tipo do Evento</option>
                     <option value="Reunião Plénaria">Reunião Plénaria</option>
 
-                    <option value="Reunião Plénaria - CRC">Reunião Plénaria - CRC</option>
+                    <option value="Reunião">Reunião</option>
 
                     <option value="Reunião do Tribunal Superior de Ética e Disciplina">Reunião do Tribunal Superior de Ética e Disciplina</option>
 
-                    <option value="Reunião Do Conselho Diretor Do CFC">Reunião Do Conselho Diretor Do CFC</option>
+                    <option value="Reunião Do Conselho Diretor">Reunião Do Conselho Diretor</option>
 
-                    <option value="Reunião Da Câmara Do CFC, exceto Da Câmara de Fiscalização, Ética e Disciplina">Reunião Da Câmara Do CFC, exceto Da Câmara de Fiscalização, Ética e Disciplina
+                    <option value="Reunião Da Câmara Do, exceto Da Câmara de Fiscalização, Ética e Disciplina">Reunião Da Câmara, exceto Da Câmara de Fiscalização, Ética e Disciplina
                     </option>
 
                     <option value="Reunião De Câmara De Fiscalização, Ética e Disciplina">Reunião De Câmara De Fiscalização, Ética e Disciplina</option>
 
                     <option value="Reunião De Comissão ou Grupo De Trabalho ou Reunião de Natureza Técnica e/ou
-                        institucional, representando o CFC">Reunião De Comissão ou Grupo De Trabalho ou Reunião de Natureza Técnica e/ou
-                        institucional, representando o CFC</option>
+                        institucional">Reunião De Comissão ou Grupo De Trabalho ou Reunião de Natureza Técnica e/ou
+                        institucional</option>
 
                     <option value="Trabalho Técnico Apresentado Em Evento Do Calendário Oficial">Trabalho Técnico Apresentado Em Evento Do Calendário Oficial</option>
 
@@ -49,7 +49,7 @@
                         Classe Contábil">Moderador/Debatedor Em Evento Do Calendário Oficial e/ou Evento De Interesse Da
                         Classe Contábil</option>
 
-                    <option value="Treinamento No CFC ou nos CRCs, Com o Instrutor">Treinamento No CFC ou nos CRCs, Com o Instrutor</option>
+                    <option value="Treinamento Com o Instrutor">Treinamento  Com o Instrutor</option>
 
                     <option value="Participação Aprovada Em Evento Nacional">Participação Aprovada Em Evento Nacional</option>
 

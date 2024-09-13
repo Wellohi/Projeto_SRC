@@ -47,7 +47,7 @@ if (isset($_SESSION["users"]) && is_array($_SESSION["users"])) {
 
 
   <div class="cabecalho">
-    <img class="logocfc" src="../assets/logo-cfc.svg" alt="">
+    <img class="logo" alt="">
     <div class="degrad"></div>
 
     <!-- Tipo de perfil -->
