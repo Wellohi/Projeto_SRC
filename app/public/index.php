@@ -45,12 +45,12 @@ require_once('./backend/conexao.php');
             <fieldset id="fieldset-index">
                 <div class="br-input small input-button">
                     <label for="input-login-small">Usuário </label>
-                    <input type="text" id="input-login-small" class="lowerLabel" placeholder="Digite seu usuário" name="nm_usuario" required>
+                    <input type="text" id="input-login-small" class="lowerLabel" placeholder="Usuário: admin" name="nm_usuario" required>
                     <button class="br-button" type="button" aria-label="Buscar"><i class="fa-solid fa-user" aria-hidden="true"></i></button>
                 </div>
                 <div class="br-input input-button">
                     <label for="input-password">Senha </label>
-                    <input type="password" name="bn_senha_usuario" id="input-password" placeholder="Digite sua senha" class="lowerLabel" required>
+                    <input type="password" name="bn_senha_usuario" id="input-password" placeholder="Senha: admin" class="lowerLabel" required>
                     <button class="br-button" type="button" aria-label="Exibir senha" role="switch" aria-checked="false"><i class="fas fa-eye" aria-hidden="true"></i></button>
                 </div>
                 <div>
