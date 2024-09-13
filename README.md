@@ -1,6 +1,7 @@
 # projeto-src
 
-
+USUÁRIO: admin
+SENHA: admin
 
 ## Getting started
 
